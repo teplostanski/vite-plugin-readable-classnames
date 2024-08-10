@@ -60,4 +60,4 @@ Before you contribute to the development of the project, read the [rules](https:
 <a href="https://github.com/teplostanski/vite-plugin-pretty-module-classnames/blob/main/LICENSE">MIT</a> License © 2024 <a href="https://github.com/teplostanski">teplostanski</a>
 
 <h2>Fund this project</h2>
-<a href="https://teplostanski.github.io/thanks">teplostanski.github.io/thanks</a>
+<a href="https://teplostanski.github.io/thanks" target="_blank">teplostanski.github.io/thanks</a>
