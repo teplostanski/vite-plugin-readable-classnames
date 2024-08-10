@@ -56,10 +56,8 @@ export default defineConfig({
 
 Before you contribute to the development of the project, read the [rules](https://github.com/teplostanski/vite-plugin-pretty-module-classnames/blob/main/CONTRIBUTING.md).
 
-<h2>
-  License
-  <a href="https://github.com/teplostanski/vite-plugin-pretty-module-classnames/blob/main/LICENSE">MIT</a>
-  <span> | </span>
-  <strong>Fund</strong>
-  <a href="https://teplostanski.github.io/thanks"> this project</a>
-</h2>
+<h2>License</h2>
+<a href="https://github.com/teplostanski/vite-plugin-pretty-module-classnames/blob/main/LICENSE">MIT</a> License © 2024 <a href="https://github.com/teplostanski">teplostanski</a>
+
+<h2>Fund this project</h2>
+<a href="https://teplostanski.github.io/thanks">teplostanski.github.io/thanks</a>
