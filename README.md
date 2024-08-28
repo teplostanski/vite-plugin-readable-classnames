@@ -27,7 +27,7 @@ Included in the <a href='https://github.com/vitejs/awesome-vite'>Awesome Vite.js
 npm install -D vite-plugin-pretty-module-classnames
 ```
 
-## Features
+## 🦾 Features
 
 - Framework-agnostic
   - Tested: without frameworks, React, Vue
@@ -36,13 +36,13 @@ npm install -D vite-plugin-pretty-module-classnames
 - Support Vite 2.x
 - Configurable: Added support for plugin configuration
 
-## Why Use This?
+## 🤔 Why Use This?
 
 As utilizing CSS modules in React, we're accustomed to seeing class names formatted as `SomeComponent__classname_hash`. However, with Vite, the naming convention for modular class names appears slightly different, resembling `__classname_hash` or `SomeComponent-module__classname_hash` the latter occurring if `generateScopedName: '[name]__[local]_[hash:base64:5]'` is specified in vite.config.js. This addition of `-module` post-component name can be cumbersome to work around.
 
 Fortunately, the `vite-plugin-pretty-module-classnames` provides a solution to this issue!
 
-## Usege
+## ⚙️ Usege
 
 ###### Api
 ```js
@@ -58,7 +58,7 @@ export default defineConfig({
 });
 ```
 
-## Configuration
+## 🔧 Configuration
 
 ### `lineNumber` Option
 
@@ -105,8 +105,8 @@ Before you contribute to the development of the project, read the [rules](https:
 
 Thanks again for your support, it is much appreciated! 🙏
 
-<h2>License</h2>
+<h2> © License</h2>
 <a href="https://github.com/teplostanski/vite-plugin-pretty-module-classnames/blob/main/LICENSE">MIT</a> License © 2024 <a href="https://github.com/teplostanski">teplostanski</a>
 
-<h2>Fund this project</h2>
+<h2> ❤ Fund this project</h2>
 <a href="https://teplostanski.github.io/thanks" target="_blank">teplostanski.github.io/thanks</a>
