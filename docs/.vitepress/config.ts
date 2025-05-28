@@ -19,7 +19,7 @@ export default defineConfig({
     ['meta', { name: 'yandex-verification', content: '8e837eda5cc26bca' }],
   ],
   sitemap: {
-    hostname: 'https://vite-plugin-readable-classnames.teplostanski.dev'
+    hostname: 'https://vite-plugin-readable-classnames.teplostan.ski'
   },
   locales: {
     root: {
