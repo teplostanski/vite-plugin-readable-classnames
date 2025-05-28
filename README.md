@@ -101,7 +101,7 @@ export default defineConfig({
 
 ## 📚 Documentation
 
-For full documentation, visit [vite-plugin-readable-classnames.teplostanski.dev](https://vite-plugin-readable-classnames.teplostanski.dev) [ EN | RU ].
+For full documentation, visit [vite-plugin-readable-classnames.teplostan.ski](https://vite-plugin-readable-classnames.teplostan.ski) [ EN | RU ].
 
 ## 🤝 Contributing
 
