@@ -16,7 +16,7 @@ export default defineConfig({
   title: "Vite Plugin Readable Classnames",
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
-    ['meta', { name: 'yandex-verification', content: 'b169cb710bf58bb1' }],
+    ['meta', { name: 'yandex-verification', content: '8e837eda5cc26bca' }],
   ],
   sitemap: {
     hostname: 'https://vite-plugin-readable-classnames.teplostanski.dev'
