@@ -100,7 +100,7 @@ export default defineConfig({
 
 ## 📚 Документация
 
-Полная документация доступна на [vite-plugin-readable-classnames.teplostanski.dev](https://vite-plugin-readable-classnames.teplostanski.dev/ru/) [ EN | RU ].
+Полная документация доступна на [vite-plugin-readable-classnames.teplostan.ski](https://vite-plugin-readable-classnames.teplostan.ski/ru/) [ EN | RU ].
 
 ## 🤝 Вклад в проект
 
@@ -114,4 +114,4 @@ export default defineConfig({
 <a href="https://github.com/teplostanski/vite-plugin-readable-classnames/blob/main/LICENSE">MIT</a> License © 2024-2025 <a href="https://github.com/teplostanski">teplostanski</a>
 
 <h2> ❤ Поддержать проект</h2>
-<a href="https://donate.teplostanski.dev" target="_blank">donate.teplostanski.dev</a> 
+<a href="https://donate.teplostan.ski" target="_blank">donate.teplostan.ski</a> 

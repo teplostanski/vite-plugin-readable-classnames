@@ -36,7 +36,7 @@
     "css module name",
     "scss module class name"
   ],
-  "homepage": "https://vite-plugin-readable-classnames.teplostanski.dev",
+  "homepage": "https://vite-plugin-readable-classnames.teplostan.ski",
   "bugs": "https://github.com/teplostanski/vite-plugin-readable-classnames/issues",
   "repository": {
     "type": "git",
@@ -44,12 +44,12 @@
   },
   "author": {
     "name": "Igor Teplostanski",
-    "email": "igor@teplostanski.dev",
-    "url": "https://teplostanski.dev"
+    "email": "igor@teplostan.ski",
+    "url": "https://teplostan.ski"
   },
   "funding": {
     "type": "crypto",
-    "url": "https://donate.teplostanski.dev"
+    "url": "https://donate.teplostan.ski"
   },
   "license": "MIT",
   "files": [
