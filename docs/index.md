@@ -17,7 +17,7 @@ hero:
 features:
   - icon: ♻️
     title: Framework-agnostic
-    details: Tested on projects with vanilla JS/TS, React, and Vue
+    details: Tested on projects with vanilla JS/TS, React, Vue, and Astro
   - icon: ✨
     title: Universal
     details: Compatible with both CommonJS and ES Modules
