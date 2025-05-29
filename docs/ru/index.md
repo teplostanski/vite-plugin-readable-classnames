@@ -17,7 +17,7 @@ hero:
 features:
   - icon: ♻️
     title: Не зависит от фреймворка
-    details: Проверено на проектах с ванильным JS/TS, React и Vue
+    details: Проверено на проектах с ванильным JS/TS, React, Vue, Astro
   - icon: ✨
     title: Универсальный
     details: Совместим с CommonJS и ES Modules
