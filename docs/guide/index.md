@@ -1,3 +1,8 @@
+---
+title: What Problem Does This Plugin Solve?
+description: Explanation of why default class names in Vite hinder debugging and how the plugin provides predictable, readable class names.
+---
+
 # 🤔 What Problem Does This Plugin Solve?
 
 In React with CSS modules, we're used to class names like `SomeComponent__classname_hash`. By default, Vite generates names in the format `__classname_hash`, omitting the component name, which makes debugging more difficult.

@@ -2,7 +2,7 @@
  * Colors: Solid
  * -------------------------------------------------------------------------- */
 
- :root {
+:root {
   --vp-c-white: #ffffff;
   --vp-c-black: #000000;
 
@@ -44,7 +44,7 @@
  * -------------------------------------------------------------------------- */
 
 :root {
-  --vp-c-gray-1: #D1D2E8;
+  --vp-c-gray-1: #d1d2e8;
   --vp-c-gray-2: #d9daec;
   --vp-c-gray-3: #e1e2f0;
   --vp-c-gray-soft: rgba(209, 210, 232, 0.12);
@@ -83,9 +83,9 @@
   --vp-c-gray-3: #2b2d3a;
   --vp-c-gray-soft: #32354946;
 
-  --vp-c-indigo-1: #D0AAE4;
-  --vp-c-indigo-2: #BB83D8;
-  --vp-c-indigo-3: #A65CCC;
+  --vp-c-indigo-1: #d0aae4;
+  --vp-c-indigo-2: #bb83d8;
+  --vp-c-indigo-3: #a65ccc;
   --vp-c-indigo-soft: #bb83d829;
 
   --vp-c-purple-1: #9aa0f9;
@@ -93,10 +93,10 @@
   --vp-c-purple-3: rgb(101, 82, 244);
   --vp-c-purple-soft: #433a8346;
 
-  --vp-c-green-1: #93C591;
-  --vp-c-green-2: #72B370;
-  --vp-c-green-3: #569D53;
-  --vp-c-green-soft: #569D5329;
+  --vp-c-green-1: #93c591;
+  --vp-c-green-2: #72b370;
+  --vp-c-green-3: #569d53;
+  --vp-c-green-soft: #569d5329;
 
   --vp-c-yellow-1: #f9b44e;
   --vp-c-yellow-2: #da8b17;
@@ -132,8 +132,8 @@
 }
 
 .dark {
-  --vp-c-bg: #1D1E27;
-  --vp-c-bg-alt: #191A21;
+  --vp-c-bg: #1d1e27;
+  --vp-c-bg-alt: #191a21;
   --vp-c-bg-elv: #20212b;
   --vp-c-bg-soft: #23242f;
 }
@@ -158,8 +158,8 @@
 }
 
 .dark {
-  --vp-c-border: #3F3F52;
-  --vp-c-divider: #3F3F52;
+  --vp-c-border: #3f3f52;
+  --vp-c-divider: #3f3f52;
   --vp-c-gutter: #2d2d3b;
 }
 
@@ -180,7 +180,7 @@
 }
 
 .dark {
-  --vp-c-text-1: #D1D2E8;
+  --vp-c-text-1: #d1d2e8;
   --vp-c-text-2: #a8a8cf;
   --vp-c-text-3: #9e9ec3;
 }
@@ -333,8 +333,8 @@
   --vp-code-font-size: 0.875em;
   /*--vp-code-color: #a6baf8;*/
   --vp-code-color: #d2d2ff;
-  --vp-code-link-color: #C993E9;
-  --vp-code-link-hover-color: #BB83D8;
+  --vp-code-link-color: #c993e9;
+  --vp-code-link-hover-color: #bb83d8;
   --vp-code-bg: #282a36;
 
   --vp-code-block-color: var(--vp-c-text-2);
@@ -589,4 +589,8 @@
   --vp-local-search-result-selected-border: var(--vp-c-brand-1);
   --vp-local-search-highlight-bg: var(--vp-c-brand-1);
   --vp-local-search-highlight-text: var(--vp-c-neutral-inverse);
+}
+
+.title {
+  text-wrap: balance;
 }

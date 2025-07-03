@@ -101,6 +101,7 @@
     "vite-plugin-qrcode": "^0.3.0",
     "vitepress": "^2.0.0-alpha.7",
     "vitepress-plugin-group-icons": "^1.6.1",
+    "vitepress-plugin-llms": "^1.6.0",
     "vitest": "^3.2.4"
   },
   "peerDependencies": {
