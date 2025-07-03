@@ -1,3 +1,8 @@
+---
+title: Installation
+description: Instructions for installing the vite-plugin-readable-classnames plugin using npm, yarn, pnpm, and bun.
+---
+
 # 📦 Installation
 
 ::: code-group
