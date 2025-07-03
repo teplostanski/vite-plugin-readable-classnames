@@ -1,3 +1,8 @@
+---
+title: lineNumber Option
+description: Explanation and example of the lineNumber option that appends the source line number to the generated class names.
+---
+
 # lineNumber
 
 The `lineNumber` option adds the line number where the class is declared in the source file to the class name.

@@ -1,3 +1,8 @@
+---
+title: Options
+description: Configuration options for vite-plugin-readable-classnames plugin including lineNumber and separator with usage example.
+---
+
 # Options
 
 The plugin supports flexible configuration through an options object.

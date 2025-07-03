@@ -1,9 +1,13 @@
 import { defineConfig } from 'vitepress'
-import { groupIconMdPlugin, groupIconVitePlugin } from "vitepress-plugin-group-icons";
-import { qrcode } from 'vite-plugin-qrcode';
-import { nav, enNav, ruNav } from './theme/configs/nav';
-import { sidebarEn, sidebarRu } from './theme/configs/sidebar';
-import {translate} from './i18n'
+import {
+  groupIconMdPlugin,
+  groupIconVitePlugin,
+} from 'vitepress-plugin-group-icons'
+import { qrcode } from 'vite-plugin-qrcode'
+import llmstxt from 'vitepress-plugin-llms'
+import { nav, enNav, ruNav } from './theme/configs/nav'
+import { sidebarEn, sidebarRu } from './theme/configs/sidebar'
+import { translate } from './i18n'
 
 const en = translate('en')
 const ru = translate('ru')
@@ -13,13 +17,13 @@ export default defineConfig({
   lastUpdated: true,
   cleanUrls: true,
   metaChunk: true,
-  title: "Vite Plugin Readable Classnames",
+  title: 'Vite Plugin Readable Classnames',
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
     ['meta', { name: 'yandex-verification', content: '8e837eda5cc26bca' }],
   ],
   sitemap: {
-    hostname: 'https://vite-plugin-readable-classnames.teplostan.ski'
+    hostname: 'https://vite-plugin-readable-classnames.teplostan.ski',
   },
   locales: {
     root: {
@@ -33,7 +37,7 @@ export default defineConfig({
           message: en('footer.message'),
           copyright: en('footer.copyright'),
         },
-      }
+      },
     },
     ru: {
       description: ru('description'),
@@ -60,18 +64,24 @@ export default defineConfig({
           message: ru('footer.message'),
           copyright: ru('footer.copyright'),
         },
-      }
-    }
+      },
+    },
   },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/teplostanski/vite-plugin-readable-classnames' },
-      { icon: 'npm', link: 'https://www.npmjs.com/package/vite-plugin-readable-classnames' },
-      { icon: 'awesomelists', link: 'https://github.com/vitejs/awesome-vite' }
+      {
+        icon: 'github',
+        link: 'https://github.com/teplostanski/vite-plugin-readable-classnames',
+      },
+      {
+        icon: 'npm',
+        link: 'https://www.npmjs.com/package/vite-plugin-readable-classnames',
+      },
+      { icon: 'awesomelists', link: 'https://github.com/vitejs/awesome-vite' },
     ],
   },
-  
+
   markdown: {
     config(md) {
       md.use(groupIconMdPlugin)
@@ -80,9 +90,11 @@ export default defineConfig({
   vite: {
     plugins: [
       groupIconVitePlugin(),
-      qrcode()
+      qrcode(),
+      llmstxt({
+        title: 'Vite Plugin Readable Classnames',
+        ignoreFiles: ['ru/**'],
+      }),
     ],
-  }
+  },
 })
-
-

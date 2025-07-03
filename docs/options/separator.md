@@ -1,3 +1,8 @@
+---
+title: separator Option
+description: Customize the separators used in generated class names with the separator option and usage examples.
+---
+
 # separator
 
 The `separator` option allows you to customize the characters used to join parts of the generated class name.  
