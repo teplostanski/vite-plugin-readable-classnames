@@ -2,19 +2,15 @@
 
 ## Supported Versions
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+We release patch versions with updated dependencies and security fixes at the end of each quarter.  
+Security updates apply to all current minor versions.
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 1.3.x   | :white_check_mark: |
-| 1.2.0   | :x:                |
-| < 1.2.0 | :x:                |
+Please keep your dependencies up to date to receive security patches in a timely manner.
 
 ## Reporting a Vulnerability
 
-Use this section to tell people how to report a vulnerability.
+If you discover a vulnerability, please report it by opening an issue or contacting us at security-report@teplostan.ski.
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+We respond to reports within one week and will keep you informed about the progress of the issue resolution.
+
+Once a vulnerability is confirmed, we will release a patch with the fix as soon as possible.
