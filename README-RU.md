@@ -12,7 +12,7 @@
 
 </a>
 
-<h3>Сделайте имена классов CSS-модулей понятными и читаемыми — плагин автоматически добавляет имя файла модуля и другую полезную информацию к именам классов для удобной разработки.</h3>
+<p>Сделайте имена классов CSS-модулей понятными и читаемыми — плагин автоматически добавляет имя файла модуля и другую полезную информацию к именам классов для удобной разработки.</p>
 
 <p>
 Входит в <a href='https://github.com/vitejs/awesome-vite'>список Awesome Vite.js <img src='https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg' alt='Awesome'></a>
@@ -25,36 +25,31 @@
 
 ```bash
 npm install -D vite-plugin-readable-classnames
-
+```
+```bash
 yarn add -D vite-plugin-readable-classnames
-
+```
+```bash
 pnpm add -D vite-plugin-readable-classnames
-
+```
+```bash
 bun add -d vite-plugin-readable-classnames
 ```
 
-## Миграция с vite-plugin-pretty-module-classnames
+## ⚙️ Применение
 
-`vite-plugin-readable-classnames` это новое имя для `vite-plugin-pretty-module-classnames`. Это руководство поможет мигрировать с `vite-plugin-pretty-module-classnames` на `vite-plugin-readable-classnames`.
+```js
+// vite.config.js
+import readableClassnames from 'vite-plugin-readable-classnames'
 
-1. Удалите старый плагин и установите новый
-
-```sh [npm]
-npm uninstall vite-plugin-pretty-module-classnames
-npm install -D vite-plugin-readable-classnames
+export default defineConfig({
+  plugins: [readableClassnames()],
+})
 ```
 
-2. Обновите импорт и использование плагина в `vite.config.js` или `vite.config.ts`
+## 📚 Документация
 
-```diff
-- import prettyModuleClassnames from 'vite-plugin-pretty-module-classnames'
-+ import readableClassnames from 'vite-plugin-readable-classnames'
-
-export default defineConfig {
--  plugins: [prettyModuleClassnames()]
-+  plugins: [readableClassnames()]
-}
-```
+Полная докуентация доступна на [vite-plugin-readable-classnames.teplostan.ski](https://vite-plugin-readable-classnames.teplostan.ski/ru/) [ EN | RU ].
 
 ## 🦾 Функциональность
 
@@ -84,23 +79,28 @@ export default defineConfig {
 >
 > Хорошо читаемые имена классов с именем компонента помогают быстро понять, откуда стиль, и упростить отладку и поддержку проекта.
 
-## ⚙️ Применение
+## Миграция с `vite-plugin-pretty-module-classnames`
 
-###### Пример
+`vite-plugin-readable-classnames` это новое имя для `vite-plugin-pretty-module-classnames`. Это руководство поможет мигрировать с `vite-plugin-pretty-module-classnames` на `vite-plugin-readable-classnames`.
 
-```js
-// vite.config.js
-// ...
-import readableClassnames from 'vite-plugin-readable-classnames'
+1. Удалите старый плагин и установите новый
 
-export default defineConfig({
-  plugins: [readableClassnames()],
-})
+```sh [npm]
+npm uninstall vite-plugin-pretty-module-classnames
+npm install -D vite-plugin-readable-classnames
 ```
 
-## 📚 Документация
+2. Обновите импорт и использование плагина в `vite.config.js` или `vite.config.ts`
 
-Полная документация доступна на [vite-plugin-readable-classnames.teplostan.ski](https://vite-plugin-readable-classnames.teplostan.ski/ru/) [ EN | RU ].
+```diff
+- import prettyModuleClassnames from 'vite-plugin-pretty-module-classnames'
++ import readableClassnames from 'vite-plugin-readable-classnames'
+
+export default defineConfig {
+-  plugins: [prettyModuleClassnames()]
++  plugins: [readableClassnames()]
+}
+```
 
 ## 🤝 Вклад в проект
 
