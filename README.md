@@ -1,4 +1,4 @@
-English | [Russian](./README.ru.md)
+English | [Russian](./README-RU.md)
 
 <div align='center'>
 <h1>vite-plugin-readable-classnames</h1>
