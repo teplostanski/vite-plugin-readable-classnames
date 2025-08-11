@@ -19,6 +19,10 @@
 </p>
 </div>
 
+## 🪞 Зеркало репозитория 
+
+[**Тут!**](https://codeberg.org/teplostanski/vite-plugin-readable-classnames)
+
 ## 📦 Установка
 
 [npmjs.com](https://npmjs.com/package/vite-plugin-readable-classnames) • [yarnpkg.com](https://yarnpkg.com/package?q=vite-plugin-readable-classnames&name=vite-plugin-readable-classnames)
