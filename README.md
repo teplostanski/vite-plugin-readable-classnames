@@ -19,6 +19,10 @@ Included in the <a href='https://github.com/vitejs/awesome-vite'>Awesome Vite.js
 </p>
 </div>
 
+## 🪞 Mirror Repo
+
+[**Here!**](https://codeberg.org/teplostanski/vite-plugin-readable-classnames)
+
 ## 📦 Installation
 
 [npmjs.com](https://npmjs.com/package/vite-plugin-readable-classnames) • [yarnpkg.com](https://yarnpkg.com/package?q=vite-plugin-readable-classnames&name=vite-plugin-readable-classnames)
