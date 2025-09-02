@@ -1,22 +1,31 @@
-Русский | [English](./README.md)
+[Английский](./README.md) • Русский
 
 <div align='center'>
-<h1>vite-plugin-readable-classnames</h1>
+  <h1>vite-plugin-readable-classnames</h1>
 
-[<img alt="NPM Version" src="https://img.shields.io/npm/v/vite-plugin-readable-classnames?style=flat-square&color=07912E&labelColor=1f2033">](https://npmjs.com/package/vite-plugin-readable-classnames)
-[<img alt="NPM License" src="https://img.shields.io/npm/l/vite-plugin-readable-classnames?style=flat-square&color=D3748F&labelColor=1f2033">](https://npmjs.com/package/vite-plugin-readable-classnames)
-[<img alt="NPM Type Definitions" src="https://img.shields.io/npm/types/vite-plugin-readable-classnames?style=flat-square&labelColor=1f2033">](https://npmjs.com/package/vite-plugin-readable-classnames)
-[<img alt="NPM Downloads" src="https://img.shields.io/npm/dw/vite-plugin-readable-classnames?style=flat-square&color=7F78D1&labelColor=1f2033">](https://npmjs.com/package/vite-plugin-readable-classnames)
-[<img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/teplostanski/vite-plugin-readable-classnames?style=flat-square&labelColor=1f2033">](https://github.com/teplostanski/vite-plugin-readable-classnames)
-[<img alt="Coverage" src="https://codecov.io/gh/teplostanski/vite-plugin-readable-classnames/graph/badge.svg?token=CQY9WXG41L">](https://codecov.io/gh/teplostanski/vite-plugin-readable-classnames)
+  <p>
+    <samp>
+      <a href="https://vite-plugin-readable-classnames.teplostan.ski">документация</a>
+      <span> · </span>
+      <a href="https://github.com/teplostanski/vite-plugin-readable-classnames">github</a>
+      <span> · </span>
+      <a href="https://codeberg.org/teplostanski/vite-plugin-readable-classnames/src/branch/main/README-RU.md">codeberg</a>
+      <span> · </span>
+      <a href="https://www.npmjs.com/package/vite-plugin-readable-classnames">npm</a>
+      <span> · </span>
+      <a href="https://yarnpkg.com/package?q=vite-plugin-readable-classnames&name=vite-plugin-readable-classnames">yarn</a>
+      <span> · </span>
+      <a href="https://donate.teplostan.ski">поддержать проект</a>
+    </samp>
+  </p>
 
-</a>
+  [<img alt="NPM Version" src="https://img.shields.io/npm/v/vite-plugin-readable-classnames?style=flat-square&color=07912E&labelColor=1f2033">](https://npmjs.com/package/vite-plugin-readable-classnames)
+  [<img alt="NPM Downloads" src="https://img.shields.io/npm/dw/vite-plugin-readable-classnames?style=flat-square&color=7F78D1&labelColor=1f2033">](https://npmjs.com/package/vite-plugin-readable-classnames)
+  [<img alt="Coverage" src="https://codecov.io/gh/teplostanski/vite-plugin-readable-classnames/graph/badge.svg?token=CQY9WXG41L">](https://codecov.io/gh/teplostanski/vite-plugin-readable-classnames)
 
-<p>Сделайте имена классов CSS-модулей понятными и читаемыми — плагин автоматически добавляет имя файла модуля и другую полезную информацию к именам классов для удобной разработки.</p>
+  <p>Сделайте имена классов CSS-модулей понятными и читаемыми — плагин автоматически добавляет имя файла модуля и другую полезную информацию к именам классов для удобной разработки.</p>
 
-<p>
-Входит в <a href='https://github.com/vitejs/awesome-vite'>список Awesome Vite.js <img src='https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg' alt='Awesome'></a>
-</p>
+  <p>Входит в <a href='https://github.com/vitejs/awesome-vite'>список Awesome Vite.js <img src='https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg' alt='Awesome'></a></p>
 </div>
 
 ## 🪞 Зеркало репозитория 
@@ -24,8 +33,6 @@
 [**Тут!**](https://codeberg.org/teplostanski/vite-plugin-readable-classnames)
 
 ## 📦 Установка
-
-[npmjs.com](https://npmjs.com/package/vite-plugin-readable-classnames) • [yarnpkg.com](https://yarnpkg.com/package?q=vite-plugin-readable-classnames&name=vite-plugin-readable-classnames)
 
 ```bash
 npm install -D vite-plugin-readable-classnames
@@ -53,7 +60,7 @@ export default defineConfig({
 
 ## 📚 Документация
 
-Полная докуентация доступна на [vite-plugin-readable-classnames.teplostan.ski](https://vite-plugin-readable-classnames.teplostan.ski/ru/) [ EN | RU ].
+Полная докуентация доступна на [vite-plugin-readable-classnames.teplostan.ski](https://vite-plugin-readable-classnames.teplostan.ski/ru/).
 
 ## 🦾 Функциональность
 
@@ -115,7 +122,7 @@ export default defineConfig {
 Спасибо за вашу поддержку! 🙏
 
 <h2> © Лицензия</h2>
-<a href="https://github.com/teplostanski/vite-plugin-readable-classnames/blob/main/LICENSE">MIT</a> License © 2024-2025 <a href="https://github.com/teplostanski">teplostanski</a>
+<a href="https://github.com/teplostanski/vite-plugin-readable-classnames/blob/main/LICENSE">MIT</a> License © 2024-настоящее время <a href="https://github.com/teplostanski">teplostanski</a>
 
 <h2> ❤ Поддержать проект</h2>
 <a href="https://donate.teplostan.ski" target="_blank">donate.teplostan.ski</a> 
