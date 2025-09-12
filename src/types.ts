@@ -17,7 +17,7 @@ export interface BuildClassname {
   isDevMode: boolean
   filename: string
   classname: string
-  pathHash: string
+  cssHash: string
   options: Options
   lineNumber: number
   getHash: (input: string) => string

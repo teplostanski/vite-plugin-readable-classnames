@@ -6,7 +6,7 @@ const params = {
   isDevMode: true,
   filename: 'Button',
   classname: 'test',
-  pathHash: 'a03d6',
+  cssHash: 'a03d6',
   lineNumber: 42,
   getHash,
 }
@@ -14,12 +14,12 @@ const params = {
 describe('sanitizeClassname', () => {
   it('should handle files with .vue extension correctly', () => {
     const result = sanitizeClassname('src/components/Button.vue')
-    expect(result.cleanFilename).toMatch(/^Button$/)
+    expect(result).toMatch(/^Button$/)
   })
 
   it('should handle files with .module suffix correctly', () => {
     const result = sanitizeClassname('src/styles/Layout.module.css')
-    expect(result.cleanFilename).toMatch(/^Layout$/)
+    expect(result).toMatch(/^Layout$/)
   })
 
   it('should throw error for invalid file path', () => {

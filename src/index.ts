@@ -49,16 +49,16 @@ export default function readableClassnames(
         modules: {
           ...cssModules,
           generateScopedName: (name: string, filename: string, css: string) => {
-            const { cleanFilename, parts } = sanitizeClassname(filename)
+            const cleanFilename = sanitizeClassname(filename)
             const isDevMode = env.mode === 'development'
-            const pathHash = getHash(parts.join('/'))
+            const cssHash = getHash(css)
             const lineNumber = getLineNumber(css, name)
 
             return buildClassname({
               isDevMode,
               filename: cleanFilename,
               classname: name,
-              pathHash,
+              cssHash,
               options,
               lineNumber,
               getHash,

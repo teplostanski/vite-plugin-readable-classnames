@@ -31,10 +31,7 @@ export function deepMerge<T>(
   return result
 }
 
-export function sanitizeClassname(filename: string): {
-  cleanFilename: string
-  parts: string[]
-} {
+export function sanitizeClassname(filename: string): string {
   if (typeof filename !== 'string') {
     throw new Error(ERROR_MSG_INVALID_TYPE)
   }
@@ -48,20 +45,20 @@ export function sanitizeClassname(filename: string): {
 
   const cleanFilename = lastSegment.replace(/(\.vue|\.module)?(\.\w+)$/, '')
 
-  return { cleanFilename, parts }
+  return cleanFilename
 }
 
 export function buildClassname({
   isDevMode,
   filename,
   classname,
-  pathHash,
+  cssHash,
   options,
   lineNumber,
   getHash,
 }: BuildClassname): string {
   const normalizedClassname = `${filename}${options.separator.beforeClassName}${classname}`
-  const hash = `${options.separator.beforeHash}${getHash(`${pathHash}-${classname}`)}`
+  const hash = `${options.separator.beforeHash}${getHash(`${cssHash}-${classname}`)}`
   const lineInfo = options.lineNumber
     ? `${options.separator.beforeLineNumber}${lineNumber}`
     : ''
