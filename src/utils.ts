@@ -1,8 +1,8 @@
 import { createHash } from 'crypto'
-import type { DeepPartial } from './types'
+import type { BuildClassname, DeepPartial } from './types'
 import { ERROR_MSG_INVALID_TYPE, ERROR_MSG_INVALID_NAME } from './constants'
 
-function getHash(input: string): string {
+export function getHash(input: string): string {
   return createHash('sha256').update(input).digest('hex').slice(0, 5)
 }
 
@@ -31,16 +31,10 @@ export function deepMerge<T>(
   return result
 }
 
-export function sanitizeModuleClassname(
-  name: string,
-  filename: string | undefined,
-  separator: {
-    beforeHash: string
-    beforeClassName: string
-    beforeLineNumber: string
-  },
-  lineNumber?: number,
-): string {
+export function sanitizeClassname(filename: string): {
+  cleanFilename: string
+  parts: string[]
+} {
   if (typeof filename !== 'string') {
     throw new Error(ERROR_MSG_INVALID_TYPE)
   }
@@ -52,13 +46,25 @@ export function sanitizeModuleClassname(
     throw new Error(ERROR_MSG_INVALID_NAME)
   }
 
-  const baseFilename = lastSegment.replace(/(\.vue|\.module)?(\.\w+)$/, '')
+  const cleanFilename = lastSegment.replace(/(\.vue|\.module)?(\.\w+)$/, '')
 
-  const pathHash = getHash(parts.join('/'))
-  const classname = `${baseFilename}${separator.beforeClassName}${name}`
-  const hash = `${separator.beforeHash}${getHash(`${pathHash}-${classname}`)}`
-  const lineInfo =
-    lineNumber !== undefined ? `${separator.beforeLineNumber}${lineNumber}` : ''
+  return { cleanFilename, parts }
+}
 
-  return `${classname}${hash}${lineInfo}`
+export function buildClassname({
+  isDevMode,
+  filename,
+  classname,
+  pathHash,
+  options,
+  lineNumber,
+  getHash,
+}: BuildClassname): string {
+  const normalizedClassname = `${filename}${options.separator.beforeClassName}${classname}`
+  const hash = `${options.separator.beforeHash}${getHash(`${pathHash}-${classname}`)}`
+  const lineInfo = options.lineNumber
+    ? `${options.separator.beforeLineNumber}${lineNumber}`
+    : ''
+
+  return isDevMode ? `${normalizedClassname}${hash}${lineInfo}` : `${hash}`
 }

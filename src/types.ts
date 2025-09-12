@@ -12,3 +12,13 @@ export interface Options {
   lineNumber: boolean
   separator: Separator
 }
+
+export interface BuildClassname {
+  isDevMode: boolean
+  filename: string
+  classname: string
+  pathHash: string
+  options: Options
+  lineNumber: number
+  getHash: (input: string) => string
+}

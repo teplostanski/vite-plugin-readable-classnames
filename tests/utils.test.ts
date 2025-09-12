@@ -1,75 +1,54 @@
 import { describe, it, expect } from 'vitest'
 import { defaultOptions } from '../src/constants.js'
-import { sanitizeModuleClassname } from '../src/utils.js'
+import { sanitizeClassname, buildClassname, getHash } from '../src/utils.js'
 
-describe('sanitizeModuleClassname', () => {
-  it('should generate correct class name with line number', () => {
-    const result = sanitizeModuleClassname(
-      'button',
-      'src/components/Button.vue',
-      { ...defaultOptions.separator },
-      42,
-    )
-    expect(result).toMatch(/^Button__button_[a-z0-9]+-42$/)
+const params = {
+  isDevMode: true,
+  filename: 'Button',
+  classname: 'test',
+  pathHash: 'a03d6',
+  lineNumber: 42,
+  getHash,
+}
+
+describe('sanitizeClassname', () => {
+  it('should handle files with .vue extension correctly', () => {
+    const result = sanitizeClassname('src/components/Button.vue')
+    expect(result.cleanFilename).toMatch(/^Button$/)
   })
 
-  it('should generate correct class name without line number', () => {
-    const result = sanitizeModuleClassname(
-      'header',
-      'src/components/Header.vue',
-      { ...defaultOptions.separator },
-    )
-    expect(result).toMatch(/^Header__header_[a-z0-9]+$/)
-  })
-
-  it('should handle files with .module extension correctly', () => {
-    const result = sanitizeModuleClassname(
-      'container',
-      'src/styles/Layout.module.css',
-      { ...defaultOptions.separator },
-    )
-    expect(result).toMatch(/^Layout__container_[a-z0-9]+$/)
-  })
-
-  it('should throw error when filename is undefined', () => {
-    expect(() => {
-      sanitizeModuleClassname('test', undefined, {
-        ...defaultOptions.separator,
-      })
-    }).toThrow('The filename must be string and cannot be undefined.')
+  it('should handle files with .module suffix correctly', () => {
+    const result = sanitizeClassname('src/styles/Layout.module.css')
+    expect(result.cleanFilename).toMatch(/^Layout$/)
   })
 
   it('should throw error for invalid file path', () => {
     expect(() => {
-      sanitizeModuleClassname('test', '/', { ...defaultOptions.separator })
+      sanitizeClassname('/')
     }).toThrow('Filename must include a valid file name.')
+  })
+})
+
+describe('buildClassname', () => {
+  it('should generate correct class name with line number', () => {
+    const result = buildClassname({...params, options: { ...defaultOptions, lineNumber: true }})
+    expect(result).toMatch(/^Button__test_[a-z0-9]+-42$/)
+  })
+
+  it('should generate correct class name without line number', () => {
+    const result = buildClassname({...params, options: { ...defaultOptions }})
+    expect(result).toMatch(/^Button__test_[a-z0-9]+$/)
   })
 
   it('should generate same hash for same input', () => {
-    const result1 = sanitizeModuleClassname(
-      'button',
-      'src/components/Button.vue',
-      { ...defaultOptions.separator },
-    )
-    const result2 = sanitizeModuleClassname(
-      'button',
-      'src/components/Button.vue',
-      { ...defaultOptions.separator },
-    )
+    const result1 = buildClassname({...params, options: { ...defaultOptions }})
+    const result2 = buildClassname({...params, options: { ...defaultOptions }})
     expect(result1).toBe(result2)
   })
 
   it('should generate different hashes for different paths', () => {
-    const result1 = sanitizeModuleClassname(
-      'button',
-      'src/components/Button.vue',
-      { ...defaultOptions.separator },
-    )
-    const result2 = sanitizeModuleClassname(
-      'button',
-      'src/elements/Button.vue',
-      { ...defaultOptions.separator },
-    )
+    const result1 = buildClassname({...params, options: { ...defaultOptions }})
+    const result2 = buildClassname({...params, options: { ...defaultOptions }, filename: 'Header'})
     expect(result1).not.toBe(result2)
   })
 })

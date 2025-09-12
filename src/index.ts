@@ -1,6 +1,12 @@
-import type { Plugin, UserConfig } from 'vite'
+import type { ConfigEnv, Plugin, UserConfig } from 'vite'
 import { defaultOptions, WARNING_MSG_GENERATE_SCOPED_NAME } from './constants'
-import { deepMerge, getLineNumber, sanitizeModuleClassname } from './utils'
+import {
+  buildClassname,
+  deepMerge,
+  getHash,
+  getLineNumber,
+  sanitizeClassname,
+} from './utils'
 import type { DeepPartial, Options } from './types'
 
 /**
@@ -20,7 +26,7 @@ export default function readableClassnames(
 ): Plugin {
   return {
     name: 'vite-plugin-readable-classnames',
-    config(config: UserConfig): UserConfig {
+    config(config: UserConfig, env: ConfigEnv): UserConfig {
       const options = deepMerge(defaultOptions, userOptions)
       const cssModules = config.css?.modules
 
@@ -43,15 +49,20 @@ export default function readableClassnames(
         modules: {
           ...cssModules,
           generateScopedName: (name: string, filename: string, css: string) => {
-            const lineNumber = options.lineNumber
-              ? getLineNumber(css, name)
-              : undefined
-            return sanitizeModuleClassname(
-              name,
-              filename,
-              options.separator,
+            const { cleanFilename, parts } = sanitizeClassname(filename)
+            const isDevMode = env.mode === 'development'
+            const pathHash = getHash(parts.join('/'))
+            const lineNumber = getLineNumber(css, name)
+
+            return buildClassname({
+              isDevMode,
+              filename: cleanFilename,
+              classname: name,
+              pathHash,
+              options,
               lineNumber,
-            )
+              getHash,
+            })
           },
         },
       }
@@ -61,5 +72,5 @@ export default function readableClassnames(
         css: newCssConfig,
       }
     },
-  }
+  } satisfies Plugin
 }

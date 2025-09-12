@@ -1,10 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import readableClassnames from '../src/index.js'
 import type { UserConfig } from 'vite'
 import { WARNING_MSG_GENERATE_SCOPED_NAME } from '../src/constants.js'
 
 describe('readableClassnames', () => {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let consoleSpy: any
   let originalVitest: string | undefined
 
@@ -20,7 +20,6 @@ describe('readableClassnames', () => {
     vi.clearAllMocks()
   })
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   function callPluginConfig(plugin: any, config: UserConfig) {
     return plugin.config(config, { command: 'serve', mode: 'development' })
   }
