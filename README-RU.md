@@ -5,7 +5,7 @@
 
   <p>
     <samp>
-      <a href="https://vite-plugin-readable-classnames.teplostan.ski">документация</a>
+      <a href="https://vite-plugin-readable-classnames.js.org">документация</a>
       <span> · </span>
       <a href="https://github.com/teplostanski/vite-plugin-readable-classnames">github</a>
       <span> · </span>
@@ -60,7 +60,7 @@ export default defineConfig({
 
 ## 📚 Документация
 
-Полная докуентация доступна на [vite-plugin-readable-classnames.teplostan.ski](https://vite-plugin-readable-classnames.teplostan.ski/ru/).
+Полная докуентация доступна на [vite-plugin-readable-classnames.js.org](https://vite-plugin-readable-classnames.js.org/ru/).
 
 ## 🦾 Функциональность
 
