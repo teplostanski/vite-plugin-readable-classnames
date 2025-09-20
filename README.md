@@ -5,7 +5,7 @@ English • [Russian](./README-RU.md)
 
   <p>
     <samp>
-      <a href="https://vite-plugin-readable-classnames.teplostan.ski">docs</a>
+      <a href="https://vite-plugin-readable-classnames.js.org">docs</a>
       <span> · </span>
       <a href="https://github.com/teplostanski/vite-plugin-readable-classnames">github</a>
       <span> · </span>
@@ -63,7 +63,7 @@ export default defineConfig({
 
 ## 📚 Documentation
 
-For full documentation, visit [vite-plugin-readable-classnames.teplostan.ski](https://vite-plugin-readable-classnames.teplostan.ski).
+For full documentation, visit [vite-plugin-readable-classnames.js.org](https://vite-plugin-readable-classnames.js.org).
 
 ## 🦾 Features
 
