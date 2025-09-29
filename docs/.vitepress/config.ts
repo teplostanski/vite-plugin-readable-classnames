@@ -20,7 +20,7 @@ export default defineConfig({
   title: 'Vite Plugin Readable Classnames',
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
-    ['meta', { name: 'yandex-verification', content: '31af22bfc196d290' }],
+    ['meta', { name: 'yandex-verification', content: '4356a85c05426fe3' }],
   ],
   sitemap: {
     hostname: 'https://vite-plugin-readable-classnames.js.org',
