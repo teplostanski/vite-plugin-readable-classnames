@@ -6,6 +6,9 @@ hero:
   name: "Vite Plugin<br>Readable Classnames"
   text: "Make your scoped CSS module class names clear and readable"
   tagline: This plugin automatically adds the module filename and other useful info to class names for easier development.
+  image:
+    src: /vite.svg
+    alt: Vite logo
   actions:
     - theme: brand
       text: Get Started

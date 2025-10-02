@@ -6,6 +6,9 @@ hero:
   name: "Vite Plugin<br>Readable Classnames"
   text: "Сделайте имена классов CSS-модулей понятными и читаемыми"
   tagline: "Плагин автоматически добавляет имя файла модуля и другую полезную информацию к именам классов для удобной разработки."
+  image:
+    src: /vite.svg
+    alt: Vite logo
   actions:
     - theme: brand
       text: Поехали
