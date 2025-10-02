@@ -19,9 +19,9 @@ English • [Russian](./README-RU.md)
     </samp>
   </p>
 
-  [<img alt="NPM Version" src="https://img.shields.io/npm/v/vite-plugin-readable-classnames?style=flat-square&color=07912E&labelColor=1f2033">](https://npmjs.com/package/vite-plugin-readable-classnames)
-  [<img alt="NPM Downloads" src="https://img.shields.io/npm/dw/vite-plugin-readable-classnames?style=flat-square&color=7F78D1&labelColor=1f2033">](https://npmjs.com/package/vite-plugin-readable-classnames)
-  [<img alt="Coverage" src="https://codecov.io/gh/teplostanski/vite-plugin-readable-classnames/graph/badge.svg?token=CQY9WXG41L">](https://codecov.io/gh/teplostanski/vite-plugin-readable-classnames)
+[<img alt="NPM Version" src="https://img.shields.io/npm/v/vite-plugin-readable-classnames?style=flat-square&color=07912E&labelColor=1f2033">](https://npmjs.com/package/vite-plugin-readable-classnames)
+[<img alt="NPM Downloads" src="https://img.shields.io/npm/dw/vite-plugin-readable-classnames?style=flat-square&color=7F78D1&labelColor=1f2033">](https://npmjs.com/package/vite-plugin-readable-classnames)
+[<img alt="Coverage" src="https://codecov.io/gh/teplostanski/vite-plugin-readable-classnames/graph/badge.svg?token=CQY9WXG41L">](https://codecov.io/gh/teplostanski/vite-plugin-readable-classnames)
 
   <p>Make your scoped CSS module class names clear and readable — this plugin automatically adds the module filename and other useful info to class names for easier development.</p>
 
@@ -128,5 +128,11 @@ Thanks again for your support, it is much appreciated! 🙏
 <h2> © License</h2>
 <a href="https://github.com/teplostanski/vite-plugin-readable-classnames/blob/main/LICENSE">MIT</a> License © 2024-present <a href="https://github.com/teplostanski">teplostanski</a>
 
-<h2> ❤ Fund this project</h2>
-<a href="https://donate.teplostan.ski" target="_blank">donate.teplostan.ski</a>
+<br>
+<br>
+
+<div>
+  <a href="https://donate.teplostan.ski" target="_blank">
+    <img src="https://src.teplostan.ski/fund-this-package.svg" alt="Fund This Package ❤">
+  </a>
+</div>
