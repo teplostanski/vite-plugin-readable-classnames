@@ -19,16 +19,16 @@
     </samp>
   </p>
 
-  [<img alt="NPM Version" src="https://img.shields.io/npm/v/vite-plugin-readable-classnames?style=flat-square&color=07912E&labelColor=1f2033">](https://npmjs.com/package/vite-plugin-readable-classnames)
-  [<img alt="NPM Downloads" src="https://img.shields.io/npm/dw/vite-plugin-readable-classnames?style=flat-square&color=7F78D1&labelColor=1f2033">](https://npmjs.com/package/vite-plugin-readable-classnames)
-  [<img alt="Coverage" src="https://codecov.io/gh/teplostanski/vite-plugin-readable-classnames/graph/badge.svg?token=CQY9WXG41L">](https://codecov.io/gh/teplostanski/vite-plugin-readable-classnames)
+[<img alt="NPM Version" src="https://img.shields.io/npm/v/vite-plugin-readable-classnames?style=flat-square&color=07912E&labelColor=1f2033">](https://npmjs.com/package/vite-plugin-readable-classnames)
+[<img alt="NPM Downloads" src="https://img.shields.io/npm/dw/vite-plugin-readable-classnames?style=flat-square&color=7F78D1&labelColor=1f2033">](https://npmjs.com/package/vite-plugin-readable-classnames)
+[<img alt="Coverage" src="https://codecov.io/gh/teplostanski/vite-plugin-readable-classnames/graph/badge.svg?token=CQY9WXG41L">](https://codecov.io/gh/teplostanski/vite-plugin-readable-classnames)
 
   <p>Сделайте имена классов CSS-модулей понятными и читаемыми — плагин автоматически добавляет имя файла модуля и другую полезную информацию к именам классов для удобной разработки.</p>
 
   <p>Входит в <a href='https://github.com/vitejs/awesome-vite'>список Awesome Vite.js <img src='https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg' alt='Awesome'></a></p>
 </div>
 
-## 🪞 Зеркало репозитория 
+## 🪞 Зеркало репозитория
 
 [**Тут!**](https://codeberg.org/teplostanski/vite-plugin-readable-classnames)
 
@@ -37,12 +37,15 @@
 ```bash
 npm install -D vite-plugin-readable-classnames
 ```
+
 ```bash
 yarn add -D vite-plugin-readable-classnames
 ```
+
 ```bash
 pnpm add -D vite-plugin-readable-classnames
 ```
+
 ```bash
 bun add -d vite-plugin-readable-classnames
 ```
@@ -84,6 +87,7 @@ export default defineConfig({
 > **Что такое сгенерированные имена классов и где они видны?**
 >
 > Когда вы используете CSS-модули, итоговые имена классов автоматически генерируются сборщиком (например, Vite или Webpack). Эти имена видны:
+>
 > - в HTML-коде страницы (через DevTools браузера);
 > - в итоговом CSS-файле;
 > - при отладке в браузере, когда вы ищете нужный элемент или стиль.
@@ -124,5 +128,11 @@ export default defineConfig {
 <h2> © Лицензия</h2>
 <a href="https://github.com/teplostanski/vite-plugin-readable-classnames/blob/main/LICENSE">MIT</a> License © 2024-настоящее время <a href="https://github.com/teplostanski">teplostanski</a>
 
-<h2> ❤ Поддержать проект</h2>
-<a href="https://donate.teplostan.ski" target="_blank">donate.teplostan.ski</a> 
+<br>
+<br>
+
+<div>
+  <a href="https://donate.teplostan.ski" target="_blank">
+    <img src="https://src.teplostan.ski/support-the-project.svg" alt="Поддержать проект ❤">
+  </a>
+</div>
