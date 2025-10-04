@@ -19,9 +19,9 @@ English • [Russian](./README-RU.md)
     </samp>
   </p>
 
-[<img alt="NPM Version" src="https://img.shields.io/npm/v/vite-plugin-readable-classnames?style=flat-square&color=07912E&labelColor=1f2033">](https://npmjs.com/package/vite-plugin-readable-classnames)
-[<img alt="NPM Downloads" src="https://img.shields.io/npm/dw/vite-plugin-readable-classnames?style=flat-square&color=7F78D1&labelColor=1f2033">](https://npmjs.com/package/vite-plugin-readable-classnames)
-<img src="https://github.com/teplostanski/vite-plugin-readable-classnames/actions/workflows/test.yml/badge.svg" alt="Tests Status">
+[<img alt="NPM Version" src="https://img.shields.io/npm/v/vite-plugin-readable-classnames?color=07912E&labelColor=1f2033">](https://npmjs.com/package/vite-plugin-readable-classnames)
+[<img alt="NPM Downloads" src="https://img.shields.io/npm/dw/vite-plugin-readable-classnames?color=7F78D1&labelColor=1f2033">](https://npmjs.com/package/vite-plugin-readable-classnames)
+<img alt="Tests Status" src="https://github.com/teplostanski/vite-plugin-readable-classnames/actions/workflows/test.yml/badge.svg">
 <img alt="Coverage" src="https://codecov.io/gh/teplostanski/vite-plugin-readable-classnames/graph/badge.svg?token=CQY9WXG41L">
 
   <p>Make your scoped CSS module class names clear and readable — this plugin automatically adds the module filename and other useful info to class names for easier development.</p>
