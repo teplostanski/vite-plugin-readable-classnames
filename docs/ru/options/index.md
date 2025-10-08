@@ -21,7 +21,9 @@ export default defineConfig({
     readableClassnames({
       lineNumber: true,
       separator: {
-        beforeClassName: '--'
+        beforeClassName: '--',
+        beforeHash: '_',
+        beforeLineNumber: '-'
       }
     })
   ]
