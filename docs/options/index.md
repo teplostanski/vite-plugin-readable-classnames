@@ -8,8 +8,8 @@ description: Configuration options for vite-plugin-readable-classnames plugin in
 The plugin supports flexible configuration through an options object.
 Currently, the following parameters are available:
 
-- **`lineNumber`** — adds the line number to the class name (see [Line Number](./line-number.md)).
-- **`separator`** — allows you to change the separators between parts of the class name (see [Separators](./separator.md)).
+- **`lineNumber`** — adds the line number to the class name (See also [Line Number](./line-number.md)).
+- **`separator`** — allows you to change the separators between parts of the class name (See also [Separators](./separator.md)).
 
 Usage example:
 
@@ -21,7 +21,9 @@ export default defineConfig({
     readableClassnames({
       lineNumber: true,
       separator: {
-        beforeClassName: '--'
+        beforeClassName: '--',
+        beforeHash: '_',
+        beforeLineNumber: '-'
       }
     })
   ]
