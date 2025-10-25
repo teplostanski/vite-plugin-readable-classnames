@@ -132,7 +132,7 @@ export default defineConfig {
 <br>
 
 <div>
-  <a href="https://donate.teplostan.ski" target="_blank">
-    <img src="https://src.teplostan.ski/support-the-project.svg" alt="Поддержать проект ❤">
+  <a href="https://donate.teplostanski.me" target="_blank">
+    <img src="https://src.teplostanski.me/support-the-project.svg" alt="Поддержать проект ❤">
   </a>
 </div>
