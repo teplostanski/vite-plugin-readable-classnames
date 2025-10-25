@@ -133,7 +133,7 @@ Thanks again for your support, it is much appreciated! 🙏
 <br>
 
 <div>
-  <a href="https://donate.teplostan.ski" target="_blank">
-    <img src="https://src.teplostan.ski/fund-this-package.svg" alt="Fund This Package ❤">
+  <a href="https://donate.teplostanski.me" target="_blank">
+    <img src="https://src.teplostanski.me/fund-this-package.svg" alt="Fund This Package ❤">
   </a>
 </div>
