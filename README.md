@@ -1,4 +1,4 @@
-English • [Russian](./README-RU.md)
+English • [Russian](https://vite-plugin-readable-classnames.js.org/ru)
 
 <div align='center'>
   <h1>vite-plugin-readable-classnames</h1>
@@ -15,7 +15,7 @@ English • [Russian](./README-RU.md)
       <span> · </span>
       <a href="https://yarnpkg.com/package?q=vite-plugin-readable-classnames&name=vite-plugin-readable-classnames">yarn</a>
       <span> · </span>
-      <a href="https://donate.teplostan.ski">fund this package</a>
+      <a href="https://donate.teplostanski.me">fund this package</a>
     </samp>
   </p>
 
@@ -76,7 +76,7 @@ For full documentation, visit [vite-plugin-readable-classnames.js.org](https://v
   - Support `Vite 2.x`
 - Customizable: Flexible configuration through options object
 
-## 🤔 What Problem Does This Plugin Solve?
+## 🤔 Problem
 
 In React with CSS modules, we're used to class names like `SomeComponent__classname_hash`. By default, Vite generates names in the format `__classname_hash`, omitting the component name, which makes debugging more difficult.
 
@@ -94,6 +94,87 @@ This plugin solves these problems and ensures predictable, readable class naming
 > - when debugging in the browser as you search for the right element or style.
 >
 > Readable class names that include the component name help you quickly understand where a style comes from, making debugging and project maintenance easier.
+
+## Usage
+
+```js
+import readableClassnames from 'vite-plugin-readable-classnames'
+
+export default defineConfig({
+  plugins: [
+    readableClassnames()
+  ]
+})
+```
+
+### Options
+
+#### lineNumber
+
+The `lineNumber` option adds the line number where the class is declared in the source file to the class name.
+
+```js
+import readableClassnames from 'vite-plugin-readable-classnames'
+
+export default defineConfig({
+  plugins: [readableClassnames({ lineNumber: true })],
+})
+```
+
+If your CSS file looks like this:
+
+```css [SomeComponent.module.css]
+1 .wrapper {
+2   /* styles */
+3 }
+4
+5 .container {
+6   /* styles */
+7 }
+```
+
+The resulting class names will be:
+
+- `SomeComponent__wrapper_abcd1-1`
+- `SomeComponent__container_abcd2-5`
+
+<br>
+
+> [!IMPORTANT] Please note:
+> The `lineNumber` option works the same way as Vite's standard class name generation when using preprocessors (Sass, Less, Stylus). The line number is taken from the generated CSS, where empty lines and comments are usually removed. Therefore, the line numbers in class names may not match the line numbers in the source files.
+>
+> In `.vue` files, line counting always starts from the `<style module>` tag, regardless of where it is located in the file. So the line number in the class name will be counted from the beginning of the `<style module>` block, not from the beginning of the entire file.
+
+#### separator
+
+The `separator` option allows you to customize the characters used to join parts of the generated class name.  
+You can override any of the following fields (all are optional, default values are shown below):
+
+| Field               | Default      | Description                                          |
+|---------------------|--------------|------------------------------------------------------|
+| `beforeHash`        | `'_'`        | Separator before the hash part                       |
+| `beforeClassName`   | `'__'`       | Separator between the file name and class name       |
+| `beforeLineNumber`  | `'-'`        | Separator before the line number (if enabled)        |
+
+```js
+import readableClassnames from 'vite-plugin-readable-classnames'
+
+export default defineConfig({
+  plugins: [
+    readableClassnames({
+      separator: {
+        beforeClassName: '--', // Uses double dash instead of double underscore
+      }
+    })
+  ]
+})
+```
+
+In this case, class names will look like:
+`SomeComponent--classname_abcd1`
+
+> [!TIP]
+> You can specify only the fields you want to override; the rest will use the default values.
 
 ## Migration from `vite-plugin-pretty-module-classnames`
 
