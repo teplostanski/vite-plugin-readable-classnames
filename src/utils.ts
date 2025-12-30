@@ -1,4 +1,5 @@
-import { createHash } from 'crypto'
+import { sep } from 'node:path'
+import { createHash } from 'node:crypto'
 import type { DeepPartial } from './types'
 import { ERROR_MSG_INVALID_TYPE, ERROR_MSG_INVALID_NAME } from './constants'
 
@@ -45,7 +46,7 @@ export function sanitizeModuleClassname(
     throw new Error(ERROR_MSG_INVALID_TYPE)
   }
 
-  const parts = filename.split('?')[0].split('/')
+  const parts = filename.split('?')[0].split(sep)
   const lastSegment = parts.pop()
 
   if (!lastSegment) {
@@ -54,7 +55,7 @@ export function sanitizeModuleClassname(
 
   const baseFilename = lastSegment.replace(/(\.vue|\.module)?(\.\w+)$/, '')
 
-  const pathHash = getHash(parts.join('/'))
+  const pathHash = getHash(parts.join(sep))
   const classname = `${baseFilename}${separator.beforeClassName}${name}`
   const hash = `${separator.beforeHash}${getHash(`${pathHash}-${classname}`)}`
   const lineInfo =
