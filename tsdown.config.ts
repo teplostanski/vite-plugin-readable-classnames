@@ -6,6 +6,6 @@ export default defineConfig({
   target: 'node20.18',
   clean: true,
   dts: true,
-  platform: 'neutral',
+  platform: 'node',
   format: ['cjs', 'esm'],
 })
