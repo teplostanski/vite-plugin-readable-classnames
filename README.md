@@ -15,7 +15,7 @@ English • [Russian](https://vite-plugin-readable-classnames.js.org/ru)
       <span> · </span>
       <a href="https://yarnpkg.com/package?q=vite-plugin-readable-classnames&name=vite-plugin-readable-classnames">yarn</a>
       <span> · </span>
-      <a href="https://teplostanski.github.io/thanks">fund this package</a>
+      <a href="https://thanks.teplostanski.me">fund this package</a>
     </samp>
   </p>
 
@@ -213,7 +213,7 @@ Thanks again for your support, it is much appreciated! 🙏
 <br>
 
 <div>
-  <a href="https://teplostanski.github.io/thanks" target="_blank">
-    <img src="https://src.teplostan.ski/fund-this-package.svg" alt="Fund This Package ❤">
+  <a href="https://thanks.teplostanski.me" target="_blank">
+    <img src="https://src.teplostanski.me/fund-this-package.svg" alt="Fund This Package ❤">
   </a>
 </div>
