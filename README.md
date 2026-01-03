@@ -51,21 +51,6 @@ pnpm add -D vite-plugin-readable-classnames
 bun add -d vite-plugin-readable-classnames
 ```
 
-## ⚙️ Usege
-
-```js
-// vite.config.js
-import readableClassnames from 'vite-plugin-readable-classnames'
-
-export default defineConfig({
-  plugins: [readableClassnames()],
-})
-```
-
-## 📚 Documentation
-
-For full documentation, visit [vite-plugin-readable-classnames.js.org](https://vite-plugin-readable-classnames.js.org).
-
 ## 🦾 Features
 
 - Framework-agnostic:
@@ -95,7 +80,11 @@ This plugin solves these problems and ensures predictable, readable class naming
 >
 > Readable class names that include the component name help you quickly understand where a style comes from, making debugging and project maintenance easier.
 
-## Usage
+## 📚 Documentation
+
+For full documentation, visit [vite-plugin-readable-classnames.js.org](https://vite-plugin-readable-classnames.js.org).
+
+## ⚙️ Usage
 
 ```js
 import readableClassnames from 'vite-plugin-readable-classnames'
