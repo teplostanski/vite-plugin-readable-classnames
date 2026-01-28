@@ -1,5 +1,3 @@
-English • [Russian](https://vite-plugin-readable-classnames.js.org/ru)
-
 <div align='center'>
   <h1>vite-plugin-readable-classnames</h1>
 
@@ -24,34 +22,39 @@ English • [Russian](https://vite-plugin-readable-classnames.js.org/ru)
 <img alt="Tests Status" src="https://github.com/teplostanski/vite-plugin-readable-classnames/actions/workflows/test.yml/badge.svg">
 <img alt="Coverage" src="https://codecov.io/gh/teplostanski/vite-plugin-readable-classnames/graph/badge.svg?token=CQY9WXG41L">
 
+  <samp>English • <a href="https://vite-plugin-readable-classnames.js.org/ru">Russian</a></samp>
+
   <p>Make your scoped CSS module class names clear and readable — this plugin automatically adds the module filename and other useful info to class names for easier development.</p>
 
   <p>Included in the <a href='https://github.com/vitejs/awesome-vite'>Awesome Vite.js list <img src='https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg' alt='Awesome'></a></p>
 </div>
 
-## 🪞 Mirror Repo
+- [Installation](#installation)
+- [Features](#features)
+- [Problem](#problem)
+- [Documentation](#documentation)
+- [Usage](#usage)
+  - [`lineNumber` option](#linenumber-option)
+  - [`separator` option](#separator-option)
+- [Migration from `vite-plugin-pretty-module-classnames`](#migration-from-vite-plugin-pretty-module-classnames)
+- [Contributing](#contributing)
+- [License](#license)
 
-[**Here!**](https://codeberg.org/teplostanski/vite-plugin-readable-classnames)
-
-## 📦 Installation
+## Installation
 
 ```bash
 npm install -D vite-plugin-readable-classnames
-```
-
-```bash
+# or
 yarn add -D vite-plugin-readable-classnames
-```
-
-```bash
+# or
 pnpm add -D vite-plugin-readable-classnames
-```
-
-```bash
+# or
 bun add -d vite-plugin-readable-classnames
 ```
 
-## 🦾 Features
+<br>
+
+## Features
 
 - Framework-agnostic:
   - Tested on projects with ![VanillaJS](https://img.shields.io/badge/Vanilla_JS/TS-%231f2033.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![React](https://img.shields.io/badge/react-%231f2033.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Vue](https://img.shields.io/badge/vue-%231f2033.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D) ![Astro](https://img.shields.io/badge/Astro-%231f2033.svg?style=for-the-badge&logo=astro&logoColor=%23BC52EE)
@@ -61,7 +64,9 @@ bun add -d vite-plugin-readable-classnames
   - Support `Vite 2.x`
 - Customizable: Flexible configuration through options object
 
-## 🤔 Problem
+<br>
+
+## Problem
 
 In React with CSS modules, we're used to class names like `SomeComponent__classname_hash`. By default, Vite generates names in the format `__classname_hash`, omitting the component name, which makes debugging more difficult.
 
@@ -80,11 +85,15 @@ This plugin solves these problems and ensures predictable, readable class naming
 >
 > Readable class names that include the component name help you quickly understand where a style comes from, making debugging and project maintenance easier.
 
-## 📚 Documentation
+<br>
+
+## Documentation
 
 For full documentation, visit [vite-plugin-readable-classnames.js.org](https://vite-plugin-readable-classnames.js.org).
 
-## ⚙️ Usage
+<br>
+
+## Usage
 
 ```js
 import readableClassnames from 'vite-plugin-readable-classnames'
@@ -96,9 +105,7 @@ export default defineConfig({
 })
 ```
 
-### Options
-
-#### lineNumber
+### `lineNumber` option
 
 The `lineNumber` option adds the line number where the class is declared in the source file to the class name.
 
@@ -134,7 +141,9 @@ The resulting class names will be:
 >
 > In `.vue` files, line counting always starts from the `<style module>` tag, regardless of where it is located in the file. So the line number in the class name will be counted from the beginning of the `<style module>` block, not from the beginning of the entire file.
 
-#### separator
+<br>
+
+### `separator` option
 
 The `separator` option allows you to customize the characters used to join parts of the generated class name.  
 You can override any of the following fields (all are optional, default values are shown below):
@@ -165,6 +174,8 @@ In this case, class names will look like:
 > [!TIP]
 > You can specify only the fields you want to override; the rest will use the default values.
 
+<br>
+
 ## Migration from `vite-plugin-pretty-module-classnames`
 
 `vite-plugin-readable-classnames` is the new identity for `vite-plugin-pretty-module-classnames`. This guide will help you migrate from `vite-plugin-pretty-module-classnames` to `vite-plugin-readable-classnames`.
@@ -188,7 +199,9 @@ export default defineConfig {
 }
 ```
 
-## 🤝 Contributing
+<br>
+
+## Contributing
 
 Want to contribute? Awesome! To show your support is to star the project, or to raise [issues on GitHub](https://github.com/teplostanski/vite-plugin-readable-classnames/issues).
 
@@ -196,8 +209,10 @@ Before you contribute to the development of the project, read the [rules](https:
 
 Thanks again for your support, it is much appreciated! 🙏
 
-<h2> © License</h2>
-<a href="https://github.com/teplostanski/vite-plugin-readable-classnames/blob/main/LICENSE">MIT</a> License © 2024-present <a href="https://github.com/teplostanski">teplostanski</a>
+<br>
+
+## License
+<a href="https://github.com/teplostanski/vite-plugin-readable-classnames/blob/main/LICENSE">MIT</a> License © 2024-present <a href="https://github.com/teplostanski">Igor Teplostanski</a>
 
 <br>
 <br>
