@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.7](https://github.com/teplostanski/vite-plugin-readable-classnames/compare/v1.5.6...v1.5.7) (2026-01-28)
+
+
+### Bug Fixes
+
+* Updated paths to type files in package.json ([8fa595b](https://github.com/teplostanski/vite-plugin-readable-classnames/commit/8fa595b0a9be20dd4649a0e6873d391952c9ff25))
+
 ### [1.5.6](https://github.com/teplostanski/vite-plugin-readable-classnames/compare/v1.5.5...v1.5.6) (2025-12-30)
 
 
