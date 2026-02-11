@@ -5,13 +5,11 @@
     <samp>
       <a href="https://vite-plugin-readable-classnames.js.org">docs</a>
       <span> · </span>
+      <a href="https://npmx.dev/package/vite-plugin-readable-classnames">npmx.dev</a>
+      <span> · </span>
       <a href="https://github.com/teplostanski/vite-plugin-readable-classnames">github</a>
       <span> · </span>
       <a href="https://codeberg.org/teplostanski/vite-plugin-readable-classnames/src/branch/main/README.md">codeberg</a>
-      <span> · </span>
-      <a href="https://www.npmjs.com/package/vite-plugin-readable-classnames">npm</a>
-      <span> · </span>
-      <a href="https://yarnpkg.com/package?q=vite-plugin-readable-classnames&name=vite-plugin-readable-classnames">yarn</a>
       <span> · </span>
       <a href="https://donate.teplostanski.me">fund this package</a>
     </samp>
