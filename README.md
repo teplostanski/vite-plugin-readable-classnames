@@ -28,9 +28,9 @@
 </div>
 
 - [Installation](#installation)
+- [Documentation for Humans](#documentation-for-humans)
 - [Features](#features)
 - [Problem](#problem)
-- [Documentation](#documentation)
 - [Usage](#usage)
   - [`lineNumber` option](#linenumber-option)
   - [`separator` option](#separator-option)
@@ -49,6 +49,12 @@ pnpm add -D vite-plugin-readable-classnames
 # or
 bun add -d vite-plugin-readable-classnames
 ```
+
+<br>
+
+## Documentation for Humans
+
+[vite-plugin-readable-classnames.js.org](https://vite-plugin-readable-classnames.js.org)
 
 <br>
 
@@ -82,12 +88,6 @@ This plugin solves these problems and ensures predictable, readable class naming
 > - when debugging in the browser as you search for the right element or style.
 >
 > Readable class names that include the component name help you quickly understand where a style comes from, making debugging and project maintenance easier.
-
-<br>
-
-## Documentation
-
-For full documentation, visit [vite-plugin-readable-classnames.js.org](https://vite-plugin-readable-classnames.js.org).
 
 <br>
 
