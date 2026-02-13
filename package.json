@@ -103,7 +103,7 @@
     "vitepress": "^2.0.0-alpha.15",
     "vitepress-plugin-group-icons": "^1.6.5",
     "vitepress-plugin-llms": "^1.10.0",
-    "vitest": "^3.2.4"
+    "vitest": "^4.0.18"
   },
   "peerDependencies": {
     "vite": ">=2.9.18"
