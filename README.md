@@ -67,6 +67,7 @@ bun add -d vite-plugin-readable-classnames
   - Compatible with both `CommonJS` and `ES Modules`
   - Support `Vite 2.x`
 - Customizable: Flexible configuration through options object
+- Zero Dependencies
 
 <br>
 
