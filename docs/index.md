@@ -20,7 +20,7 @@ hero:
 features:
   - icon: ♻️
     title: Framework-agnostic
-    details: Tested on projects with vanilla JS/TS, React, Vue, and Astro
+    details: Tested on projects with vanilla JS/TS, React/Preact, Next, Vue, Nuxt and Astro
   - icon: ✨
     title: Universal
     details: Compatible with both CommonJS and ES Modules
