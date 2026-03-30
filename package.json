@@ -80,9 +80,6 @@
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "prepare": "husky",
-    "docs:dev": "vitepress dev docs --host",
-    "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs",
     "update-deps": "npx taze -w && npm i && npm audit fix"
   },
   "devDependencies": {
@@ -99,12 +96,9 @@
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.57.1",
     "vite": "^8.0.1",
-    "vitepress": "^2.0.0-alpha.17",
-    "vitepress-plugin-group-icons": "^1.7.1",
-    "vitepress-plugin-llms": "^1.12.0",
     "vitest": "^3.2.4"
   },
   "peerDependencies": {
-    "vite": ">=2.9.18"
+    "vite": "^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0"
   }
 }
