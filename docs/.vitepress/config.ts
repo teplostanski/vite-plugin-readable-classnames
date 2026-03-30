@@ -3,7 +3,6 @@ import {
   groupIconMdPlugin,
   groupIconVitePlugin,
 } from 'vitepress-plugin-group-icons'
-import { qrcode } from 'vite-plugin-qrcode'
 import llmstxt from 'vitepress-plugin-llms'
 import { nav, enNav, ruNav } from './theme/configs/nav'
 import { sidebarEn, sidebarRu } from './theme/configs/sidebar'
@@ -94,7 +93,6 @@ export default defineConfig({
   vite: {
     plugins: [
       groupIconVitePlugin(),
-      qrcode(),
       llmstxt({
         title: 'Vite Plugin Readable Classnames',
         ignoreFiles: ['ru/**'],
