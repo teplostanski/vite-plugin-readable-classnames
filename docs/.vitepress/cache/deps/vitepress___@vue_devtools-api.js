@@ -187,14 +187,13 @@ function isUrlString(str) {
 var deepClone = (0, import_rfdc.default)({ circles: true });
 
 // node_modules/perfect-debounce/dist/index.mjs
-var DEBOUNCE_DEFAULTS = {
-  trailing: true
-};
+var DEBOUNCE_DEFAULTS = { trailing: true };
 function debounce(fn, wait = 25, options = {}) {
-  options = { ...DEBOUNCE_DEFAULTS, ...options };
-  if (!Number.isFinite(wait)) {
-    throw new TypeError("Expected `wait` to be a finite number");
-  }
+  options = {
+    ...DEBOUNCE_DEFAULTS,
+    ...options
+  };
+  if (!Number.isFinite(wait)) throw new TypeError("Expected `wait` to be a finite number");
   let leadingValue;
   let timeout;
   let resolveList = [];
@@ -212,38 +211,51 @@ function debounce(fn, wait = 25, options = {}) {
     });
     return currentPromise;
   };
-  return function(...args) {
-    if (currentPromise) {
-      if (options.trailing) {
-        trailingArgs = args;
-      }
-      return currentPromise;
-    }
+  const debounced = function(...args) {
+    if (options.trailing) trailingArgs = args;
+    if (currentPromise) return currentPromise;
     return new Promise((resolve) => {
       const shouldCallNow = !timeout && options.leading;
       clearTimeout(timeout);
       timeout = setTimeout(() => {
         timeout = null;
         const promise = options.leading ? leadingValue : applyFn(this, args);
-        for (const _resolve of resolveList) {
-          _resolve(promise);
-        }
+        trailingArgs = null;
+        for (const _resolve of resolveList) _resolve(promise);
         resolveList = [];
       }, wait);
       if (shouldCallNow) {
         leadingValue = applyFn(this, args);
         resolve(leadingValue);
-      } else {
-        resolveList.push(resolve);
-      }
+      } else resolveList.push(resolve);
     });
   };
+  const _clearTimeout = (timer) => {
+    if (timer) {
+      clearTimeout(timer);
+      timeout = null;
+    }
+  };
+  debounced.isPending = () => !!timeout;
+  debounced.cancel = () => {
+    _clearTimeout(timeout);
+    resolveList = [];
+    trailingArgs = null;
+  };
+  debounced.flush = () => {
+    _clearTimeout(timeout);
+    if (!trailingArgs || currentPromise) return;
+    const args = trailingArgs;
+    trailingArgs = null;
+    return applyFn(this, args);
+  };
+  return debounced;
 }
 async function _applyPromised(fn, _this, args) {
   return await fn.apply(_this, args);
 }
 
-// node_modules/hookable/dist/index.mjs
+// node_modules/@vue/devtools-kit/node_modules/hookable/dist/index.mjs
 function flatHooks(configHooks, hooks2 = {}, parentName) {
   for (const key in configHooks) {
     const subHook = configHooks[key];
@@ -448,7 +460,7 @@ function createHooks() {
   return new Hookable();
 }
 
-// node_modules/birpc/dist/index.mjs
+// node_modules/@vue/devtools-kit/node_modules/birpc/dist/index.mjs
 var { clearTimeout: clearTimeout2, setTimeout: setTimeout2 } = globalThis;
 var random = Math.random.bind(Math);
 
@@ -510,14 +522,11 @@ function getInstanceName(instance) {
   return "Anonymous Component";
 }
 function getUniqueComponentId(instance) {
-  const appId = instance?.appContext?.app?.__VUE_DEVTOOLS_NEXT_APP_RECORD_ID__ ?? 0;
-  const instanceId = instance === instance?.root ? "root" : instance.uid;
-  return `${appId}:${instanceId}`;
+  return `${instance?.appContext?.app?.__VUE_DEVTOOLS_NEXT_APP_RECORD_ID__ ?? 0}:${instance === instance?.root ? "root" : instance.uid}`;
 }
 function getComponentInstance(appRecord, instanceId) {
   instanceId = instanceId || `${appRecord.id}:root`;
-  const instance = appRecord.instanceMap.get(instanceId);
-  return instance || appRecord.instanceMap.get(":root");
+  return appRecord.instanceMap.get(instanceId) || appRecord.instanceMap.get(":root");
 }
 function createRect() {
   const rect = {
@@ -694,8 +703,7 @@ function highlight(instance) {
   const bounds = getComponentBoundingRect(instance);
   if (!bounds.width && !bounds.height) return;
   const name = getInstanceName(instance);
-  const container = getContainerElement();
-  container ? update({
+  getContainerElement() ? update({
     bounds,
     name
   }) : create({
@@ -714,12 +722,10 @@ function inspectFn(e) {
     const instance = target$1.__vueParentComponent;
     if (instance) {
       inspectInstance = instance;
-      const el = instance.vnode.el;
-      if (el) {
+      if (instance.vnode.el) {
         const bounds = getComponentBoundingRect(instance);
         const name = getInstanceName(instance);
-        const container = getContainerElement();
-        container ? update({
+        getContainerElement() ? update({
           bounds,
           name
         }) : create({
@@ -733,10 +739,7 @@ function inspectFn(e) {
 function selectComponentFn(e, cb) {
   e.preventDefault();
   e.stopPropagation();
-  if (inspectInstance) {
-    const uniqueComponentId = getUniqueComponentId(inspectInstance);
-    cb(uniqueComponentId);
-  }
+  if (inspectInstance) cb(getUniqueComponentId(inspectInstance));
 }
 var inspectComponentHighLighterSelectFn = null;
 function cancelInspectComponentHighLighter() {
@@ -858,9 +861,10 @@ function toRaw$1(observed) {
   const raw = observed && observed[ReactiveFlags.RAW];
   return raw ? toRaw$1(raw) : observed;
 }
-var Fragment = Symbol.for("v-fgt");
 var StateEditor = class {
-  refEditor = new RefStateEditor();
+  constructor() {
+    this.refEditor = new RefStateEditor();
+  }
   set(object, path, value, cb) {
     const sections = Array.isArray(path) ? path : path.split(".");
     while (sections.length > 1) {
@@ -950,7 +954,7 @@ var RefStateEditor = class {
 var stateEditor = new StateEditor();
 var TIMELINE_LAYERS_STATE_STORAGE_ID = "__VUE_DEVTOOLS_KIT_TIMELINE_LAYERS_STATE__";
 function getTimelineLayersStateFromStorage() {
-  if (!isBrowser || typeof localStorage === "undefined" || localStorage === null) return {
+  if (typeof window === "undefined" || !isBrowser || typeof localStorage === "undefined" || localStorage === null) return {
     recordingState: false,
     mouseEventEnabled: false,
     keyboardEventEnabled: false,
@@ -958,7 +962,7 @@ function getTimelineLayersStateFromStorage() {
     performanceEventEnabled: false,
     selected: ""
   };
-  const state = localStorage.getItem(TIMELINE_LAYERS_STATE_STORAGE_ID);
+  const state = typeof localStorage.getItem !== "undefined" ? localStorage.getItem(TIMELINE_LAYERS_STATE_STORAGE_ID) : null;
   return state ? JSON.parse(state) : {
     recordingState: false,
     mouseEventEnabled: false,
@@ -1116,13 +1120,12 @@ function createDevToolsCtxHooks() {
     addTimelineLayer(options, plugin.descriptor);
   });
   hooks$1.hook(DevToolsContextHookKeys.TIMELINE_EVENT_ADDED, ({ options, plugin }) => {
-    const internalLayerIds = [
+    if (devtoolsState.highPerfModeEnabled || !devtoolsState.timelineLayersState?.[plugin.descriptor.id] && ![
       "performance",
       "component-event",
       "keyboard",
       "mouse"
-    ];
-    if (devtoolsState.highPerfModeEnabled || !devtoolsState.timelineLayersState?.[plugin.descriptor.id] && !internalLayerIds.includes(options.layerId)) return;
+    ].includes(options.layerId)) return;
     hooks$1.callHookWith(async (callbacks) => {
       await Promise.all(callbacks.map((cb) => cb(options)));
     }, DevToolsMessagingHookKeys.SEND_TIMELINE_EVENT_TO_CLIENT);
@@ -1131,16 +1134,13 @@ function createDevToolsCtxHooks() {
     const appRecord = app.__VUE_DEVTOOLS_NEXT_APP_RECORD__;
     if (!appRecord) return null;
     const appId = appRecord.id.toString();
-    const instances = [...appRecord.instanceMap].filter(([key]) => key.split(":")[0] === appId).map(([, instance]) => instance);
-    return instances;
+    return [...appRecord.instanceMap].filter(([key]) => key.split(":")[0] === appId).map(([, instance]) => instance);
   });
   hooks$1.hook(DevToolsContextHookKeys.GET_COMPONENT_BOUNDS, async ({ instance }) => {
-    const bounds = getComponentBoundingRect(instance);
-    return bounds;
+    return getComponentBoundingRect(instance);
   });
   hooks$1.hook(DevToolsContextHookKeys.GET_COMPONENT_NAME, ({ instance }) => {
-    const name = getInstanceName(instance);
-    return name;
+    return getInstanceName(instance);
   });
   hooks$1.hook(DevToolsContextHookKeys.COMPONENT_HIGHLIGHT, ({ uid }) => {
     const instance = activeAppRecord.value.instanceMap.get(uid);
@@ -1309,8 +1309,7 @@ function getPluginLocalKey(pluginId) {
   return `__VUE_DEVTOOLS_NEXT_PLUGIN_SETTINGS__${pluginId}__`;
 }
 function getPluginSettingsOptions(pluginId) {
-  const item = devtoolsPluginBuffer.find((item$1) => item$1[0].id === pluginId && !!item$1[0]?.settings)?.[0] ?? null;
-  return item?.settings ?? null;
+  return (devtoolsPluginBuffer.find((item) => item[0].id === pluginId && !!item[0]?.settings)?.[0] ?? null)?.settings ?? null;
 }
 function getPluginSettings(pluginId, fallbackValue) {
   const localKey = getPluginLocalKey(pluginId);
@@ -1318,16 +1317,12 @@ function getPluginSettings(pluginId, fallbackValue) {
     const localSettings = localStorage.getItem(localKey);
     if (localSettings) return JSON.parse(localSettings);
   }
-  if (pluginId) {
-    const item = devtoolsPluginBuffer.find((item$1) => item$1[0].id === pluginId)?.[0] ?? null;
-    return _getSettings(item?.settings ?? {});
-  }
+  if (pluginId) return _getSettings((devtoolsPluginBuffer.find((item) => item[0].id === pluginId)?.[0] ?? null)?.settings ?? {});
   return _getSettings(fallbackValue);
 }
 function initPluginSettings(pluginId, settings) {
   const localKey = getPluginLocalKey(pluginId);
-  const localSettings = localStorage.getItem(localKey);
-  if (!localSettings) localStorage.setItem(localKey, JSON.stringify(_getSettings(settings)));
+  if (!localStorage.getItem(localKey)) localStorage.setItem(localKey, JSON.stringify(_getSettings(settings)));
 }
 function setPluginSettings(pluginId, key, value) {
   const localKey = getPluginLocalKey(pluginId);
@@ -1405,8 +1400,6 @@ var hook = {
   }
 };
 var DevToolsV6PluginAPI = class {
-  plugin;
-  hooks;
   constructor({ plugin, ctx }) {
     this.hooks = ctx.hooks;
     this.plugin = plugin;
@@ -3199,8 +3192,7 @@ function updateDevToolsClientDetected(params) {
     ...devtoolsState.devtoolsClientDetected,
     ...params
   };
-  const devtoolsClientVisible = Object.values(devtoolsState.devtoolsClientDetected).some(Boolean);
-  toggleHighPerfMode(!devtoolsClientVisible);
+  toggleHighPerfMode(!Object.values(devtoolsState.devtoolsClientDetected).some(Boolean));
 }
 target.__VUE_DEVTOOLS_UPDATE_CLIENT_DETECTED__ ??= updateDevToolsClientDetected;
 var DoubleIndexedKV = class {
@@ -3272,7 +3264,6 @@ function find(record, predicate) {
     const value = valuesNotNever[i];
     if (predicate(value)) return value;
   }
-  return void 0;
 }
 function forEach(record, run) {
   Object.entries(record).forEach(([key, value]) => run(value, key));
@@ -3285,7 +3276,6 @@ function findArr(record, predicate) {
     const value = record[i];
     if (predicate(value)) return value;
   }
-  return void 0;
 }
 var CustomTransformerRegistry = class {
   constructor() {
@@ -3334,14 +3324,12 @@ var parsePath = (string) => {
   let segment = "";
   for (let i = 0; i < string.length; i++) {
     let char = string.charAt(i);
-    const isEscapedDot = char === "\\" && string.charAt(i + 1) === ".";
-    if (isEscapedDot) {
+    if (char === "\\" && string.charAt(i + 1) === ".") {
       segment += ".";
       i++;
       continue;
     }
-    const isEndOfSegment = char === ".";
-    if (isEndOfSegment) {
+    if (char === ".") {
       result.push(segment);
       segment = "";
       continue;
@@ -3412,14 +3400,10 @@ function compositeTransformation(isApplicable, annotation, transform, untransfor
   };
 }
 var symbolRule = compositeTransformation((s, superJson) => {
-  if (isSymbol(s)) {
-    const isRegistered = !!superJson.symbolRegistry.getIdentifier(s);
-    return isRegistered;
-  }
+  if (isSymbol(s)) return !!superJson.symbolRegistry.getIdentifier(s);
   return false;
 }, (s, superJson) => {
-  const identifier = superJson.symbolRegistry.getIdentifier(s);
-  return ["symbol", identifier];
+  return ["symbol", superJson.symbolRegistry.getIdentifier(s)];
 }, (v) => v.description, (_, a, superJson) => {
   const value = superJson.symbolRegistry.getValue(a[1]);
   if (!value) throw new Error("Trying to deserialize unknown symbol");
@@ -3445,15 +3429,11 @@ var typedArrayRule = compositeTransformation(isTypedArray, (v) => ["typed-array"
   return new ctor(v);
 });
 function isInstanceOfRegisteredClass(potentialClass, superJson) {
-  if (potentialClass?.constructor) {
-    const isRegistered = !!superJson.classRegistry.getIdentifier(potentialClass.constructor);
-    return isRegistered;
-  }
+  if (potentialClass?.constructor) return !!superJson.classRegistry.getIdentifier(potentialClass.constructor);
   return false;
 }
 var classRule = compositeTransformation(isInstanceOfRegisteredClass, (clazz, superJson) => {
-  const identifier = superJson.classRegistry.getIdentifier(clazz.constructor);
-  return ["class", identifier];
+  return ["class", superJson.classRegistry.getIdentifier(clazz.constructor)];
 }, (clazz, superJson) => {
   const allowedProps = superJson.classRegistry.getAllowedProps(clazz.constructor);
   if (!allowedProps) return { ...clazz };
@@ -3470,11 +3450,9 @@ var classRule = compositeTransformation(isInstanceOfRegisteredClass, (clazz, sup
 var customRule = compositeTransformation((value, superJson) => {
   return !!superJson.customTransformerRegistry.findApplicable(value);
 }, (value, superJson) => {
-  const transformer = superJson.customTransformerRegistry.findApplicable(value);
-  return ["custom", transformer.name];
+  return ["custom", superJson.customTransformerRegistry.findApplicable(value).name];
 }, (value, superJson) => {
-  const transformer = superJson.customTransformerRegistry.findApplicable(value);
-  return transformer.serialize(value);
+  return superJson.customTransformerRegistry.findApplicable(value).serialize(value);
 }, (v, a, superJson) => {
   const transformer = superJson.customTransformerRegistry.findByName(a[1]);
   if (!transformer) throw new Error("Trying to deserialize unknown custom value");
@@ -3497,7 +3475,6 @@ var transformValue = (value, superJson) => {
     value: applicableSimpleRule.transform(value, superJson),
     type: applicableSimpleRule.annotation
   };
-  return void 0;
 };
 var simpleRulesByAnnotation = {};
 simpleRules.forEach((rule) => {
@@ -3571,8 +3548,7 @@ var setDeep = (object, path, mapper) => {
       const row = +key;
       parent = getNthKey(parent, row);
     } else if (isMap(parent)) {
-      const isEnd = i === path.length - 2;
-      if (isEnd) break;
+      if (i === path.length - 2) break;
       const row = +key;
       const type = +path[++i] === 0 ? "key" : "value";
       const keyOfRow = getNthKey(parent, row);
@@ -3600,8 +3576,7 @@ var setDeep = (object, path, mapper) => {
   if (isMap(parent)) {
     const row = +path[path.length - 2];
     const keyToRow = getNthKey(parent, row);
-    const type = +lastKey === 0 ? "key" : "value";
-    switch (type) {
+    switch (+lastKey === 0 ? "key" : "value") {
       case "key": {
         const newKey = mapper(keyToRow);
         parent.set(newKey, parent.get(keyToRow));
@@ -3748,8 +3723,7 @@ function copy(target$1, options = {}) {
   return [...props, ...symbols].reduce((carry, key) => {
     if (isArray$1(options.props) && !options.props.includes(key)) return carry;
     const val = target$1[key];
-    const newVal = copy(val, options);
-    assignProp(carry, key, newVal, target$1, options.nonenumerable);
+    assignProp(carry, key, copy(val, options), target$1, options.nonenumerable);
     return carry;
   }, {});
 }

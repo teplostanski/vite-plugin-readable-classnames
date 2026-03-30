@@ -1,4 +1,5 @@
 <div align='center'>
+  <img src="https://cdn.simpleicons.org/vite/9135FF" alt="Vite" width="24" height="24" />
   <h1>vite-plugin-readable-classnames</h1>
 
   <p>
@@ -15,16 +16,22 @@
     </samp>
   </p>
 
-[<img alt="NPM Version" src="https://img.shields.io/npm/v/vite-plugin-readable-classnames?color=07912E&labelColor=1f2033">](https://npmjs.com/package/vite-plugin-readable-classnames)
-[<img alt="NPM Downloads" src="https://img.shields.io/npm/dw/vite-plugin-readable-classnames?color=7F78D1&labelColor=1f2033">](https://npmjs.com/package/vite-plugin-readable-classnames)
-<img alt="Tests Status" src="https://github.com/teplostanski/vite-plugin-readable-classnames/actions/workflows/test.yml/badge.svg">
-<img alt="Coverage" src="https://codecov.io/gh/teplostanski/vite-plugin-readable-classnames/graph/badge.svg?token=CQY9WXG41L">
+[![Open on npmx.dev](https://npmx.dev/api/registry/badge/version/vite-plugin-readable-classnames?labelColor=1f2033)](https://npmx.dev/package/vite-plugin-readable-classnames)
+[![Open on npmx.dev](https://npmx.dev/api/registry/badge/downloads-month/vite-plugin-readable-classnames?labelColor=1f2033)](https://npmx.dev/package/vite-plugin-readable-classnames)
+[![Open on npmx.dev](https://npmx.dev/api/registry/badge/dependencies/vite-plugin-readable-classnames?labelColor=1f2033)](https://npmx.dev/package/vite-plugin-readable-classnames)
+[![Open on npmx.dev](https://npmx.dev/api/registry/badge/vulnerabilities/vite-plugin-readable-classnames?labelColor=1f2033)](https://npmx.dev/package/vite-plugin-readable-classnames)
+[![Open on npmx.dev](https://npmx.dev/api/registry/badge/deprecated/vite-plugin-readable-classnames?labelColor=1f2033)](https://npmx.dev/package/vite-plugin-readable-classnames)
+[![Open on npmx.dev](https://npmx.dev/api/registry/badge/updated/vite-plugin-readable-classnames?labelColor=1f2033)](https://npmx.dev/package/vite-plugin-readable-classnames)
+![Github Tests Status](https://img.shields.io/github/actions/workflow/status/teplostanski/vite-plugin-readable-classnames/test.yml?label=tests&labelColor=1f2033&color=22c55e&style=flat)
+![Github Tests Status](https://img.shields.io/codecov/c/gh/teplostanski/vite-plugin-readable-classnames?label=coverage&labelColor=1f2033&color=22c55e&style=flat)
 
   <samp>English • <a href="https://vite-plugin-readable-classnames.js.org/ru">Russian</a></samp>
 
   <p>Make your scoped CSS module class names clear and readable — this plugin automatically adds the module filename and other useful info to class names for easier development.</p>
 
-  <p>Included in the <a href='https://github.com/vitejs/awesome-vite'>Awesome Vite.js list <img src='https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg' alt='Awesome'></a></p>
+  <p>Included in the <a href='https://registry.vite.dev/plugins?q=vite-plugin-readable-classnames'>Vite Plugin Registry
+  <br>
+  <img src='https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg' alt='Awesome'></a></p>
 </div>
 
 - [Installation](#installation)
@@ -61,8 +68,8 @@ bun add -d vite-plugin-readable-classnames
 ## Features
 
 - Framework-agnostic:
-  - Tested on projects with ![VanillaJS](https://img.shields.io/badge/Vanilla_JS/TS-%231f2033.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![React](https://img.shields.io/badge/react-%231f2033.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Vue](https://img.shields.io/badge/vue-%231f2033.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D) ![Astro](https://img.shields.io/badge/Astro-%231f2033.svg?style=for-the-badge&logo=astro&logoColor=%23BC52EE)
-  - Potentially works with any framework. If you have any problems, write to the [Issue](https://github.com/teplostanski/vite-plugin-readable-classnames/issues)
+
+    ![VanillaJS](https://img.shields.io/badge/Vanilla_JS_%2F_TS-%231f2033.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![React/Preact](https://img.shields.io/badge/react_%2F_preact-%231f2033.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Vue](https://img.shields.io/badge/vue-%231f2033.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D) ![Next](https://img.shields.io/badge/Next-%231f2033.svg?style=for-the-badge&logo=nextdotjs&logoColor=%23FFFFFF) ![Nuxt](https://img.shields.io/badge/Nuxt-%231f2033.svg?style=for-the-badge&logo=nuxt&logoColor=%2300DC82) ![Astro](https://img.shields.io/badge/Astro-%231f2033.svg?style=for-the-badge&logo=astro&logoColor=%23BC52EE)
 - Universal:
   - Compatible with both `CommonJS` and `ES Modules`
   - Support `Vite 2.x`
