@@ -93,7 +93,7 @@
     "prettier": "^3.8.1",
     "standard-version": "^9.5.0",
     "tsdown": "^0.21.4",
-    "typescript": "^5.9.3",
+    "typescript": "^6.0.2",
     "typescript-eslint": "^8.57.1",
     "vite": "^8.0.1",
     "vitest": "^3.2.4"
