@@ -72,4 +72,15 @@ describe('sanitizeModuleClassname', () => {
     )
     expect(result1).not.toBe(result2)
   })
+
+  it('should handle Windows absolute paths from Vite', () => {
+    const result = sanitizeModuleClassname(
+      'Root',
+      'C:/Users/dev/project/src/components/EventCard.module.sass',
+      { ...defaultOptions.separator },
+    )
+    expect(result).toMatch(/^EventCard__Root_[a-z0-9]+$/)
+    expect(result).not.toContain('C:')
+    expect(result).not.toContain('/')
+  })
 })
