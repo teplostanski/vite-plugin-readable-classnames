@@ -1,7 +1,12 @@
 import type { Plugin, UserConfig } from 'vite'
-import { defaultOptions, WARNING_MSG_GENERATE_SCOPED_NAME } from './constants'
-import { deepMerge, getLineNumber, sanitizeModuleClassname } from './utils'
+import {
+  defaultOptions,
+  GENERATE_SCOPED_NAME,
+  PLUGIN_NAME,
+  Warnings,
+} from './constants'
 import type { DeepPartial, Options } from './types'
+import { deepMerge, getLineNumber, sanitizeModuleClassname } from './utils'
 
 /**
  * Adds the filename without the `-module` suffix to the class names of CSS modules.
@@ -19,7 +24,7 @@ export default function readableClassnames(
   userOptions: DeepPartial<Options> = {},
 ): Plugin {
   return {
-    name: 'vite-plugin-readable-classnames',
+    name: PLUGIN_NAME,
     config(config: UserConfig): UserConfig {
       const options = deepMerge(defaultOptions, userOptions)
       const cssModules = config.css?.modules
@@ -32,10 +37,10 @@ export default function readableClassnames(
 
       if (
         cssModules &&
-        'generateScopedName' in cssModules &&
-        cssModules.generateScopedName
+        GENERATE_SCOPED_NAME in cssModules &&
+        cssModules[GENERATE_SCOPED_NAME]
       ) {
-        console.warn(WARNING_MSG_GENERATE_SCOPED_NAME)
+        console.warn(Warnings.GenerateScopedName)
       }
 
       const newCssConfig = {

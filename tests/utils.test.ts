@@ -1,5 +1,5 @@
-import { describe, it, expect } from 'vitest'
-import { defaultOptions } from '../src/constants.js'
+import { describe, expect, it } from 'vitest'
+import { defaultOptions, Errors } from '../src/constants.js'
 import { sanitizeModuleClassname } from '../src/utils.js'
 
 describe('sanitizeModuleClassname', () => {
@@ -36,13 +36,13 @@ describe('sanitizeModuleClassname', () => {
       sanitizeModuleClassname('test', undefined, {
         ...defaultOptions.separator,
       })
-    }).toThrow('The filename must be string and cannot be undefined.')
+    }).toThrow(Errors.InvalidType)
   })
 
   it('should throw error for invalid file path', () => {
     expect(() => {
       sanitizeModuleClassname('test', '/', { ...defaultOptions.separator })
-    }).toThrow('Filename must include a valid file name.')
+    }).toThrow(Errors.InvalidName)
   })
 
   it('should generate same hash for same input', () => {
