@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.10](https://github.com/teplostanski/vite-plugin-readable-classnames/compare/v1.5.9...v1.5.10) (2026-07-04)
+
+
+### Bug Fixes
+
+* replace path.sep with universal separator for Windows compatibility ([753d8bd](https://github.com/teplostanski/vite-plugin-readable-classnames/commit/753d8bda11bf73da81e442a5650bd4bdeacda956)), closes [#295](https://github.com/teplostanski/vite-plugin-readable-classnames/issues/295)
+* use posix.parse for Windows path normalization in class names ([3e9140f](https://github.com/teplostanski/vite-plugin-readable-classnames/commit/3e9140fb9803db7fb0616cf234e2b16b08a31686))
+
 ### [1.5.9](https://github.com/teplostanski/vite-plugin-readable-classnames/compare/v1.5.8...v1.5.9) (2026-03-30)
 
 ### [1.5.8](https://github.com/teplostanski/vite-plugin-readable-classnames/compare/v1.5.7...v1.5.8) (2026-03-23)

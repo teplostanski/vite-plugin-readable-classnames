@@ -1,15 +1,28 @@
 import { createHash } from 'node:crypto'
+import { posix } from 'node:path'
+import {
+  BASE_FILENAME_STRIP_REGEX,
+  Css,
+  Errors,
+  Hash,
+  Path,
+  WINDOWS_PATH_SEPARATOR_REGEX,
+} from './constants'
 import type { DeepPartial } from './types'
-import { ERROR_MSG_INVALID_TYPE, ERROR_MSG_INVALID_NAME } from './constants'
 
 function getHash(input: string): string {
-  return createHash('sha256').update(input).digest('hex').slice(0, 5)
+  return createHash(Hash.Algorithm)
+    .update(input)
+    .digest('hex')
+    .slice(0, Hash.Length)
 }
 
 export function getLineNumber(cssData: string, className: string): number {
-  const lines = cssData.split('\n')
+  const lines = cssData.split(Css.LineSeparator)
   const match = new RegExp(`\\.${className}\\b`)
-  return lines.findIndex((line) => match.test(line)) + 1
+  return (
+    lines.findIndex((line) => match.test(line)) + Css.OneBasedLineNumberOffset
+  )
 }
 
 export function deepMerge<T>(
@@ -42,21 +55,22 @@ export function sanitizeModuleClassname(
   lineNumber?: number,
 ): string {
   if (typeof filename !== 'string') {
-    throw new Error(ERROR_MSG_INVALID_TYPE)
+    throw new Error(Errors.InvalidType)
   }
 
-  const parts = filename.split("?")[0].replace(/\\/g, "/").split("/");
-  const lastSegment = parts.pop()
+  const pathname = filename
+    .split(Path.FilenameQuerySeparator)[0]
+    .replace(WINDOWS_PATH_SEPARATOR_REGEX, Path.PosixSeparator)
+  const { dir, base } = posix.parse(pathname)
 
-  if (!lastSegment) {
-    throw new Error(ERROR_MSG_INVALID_NAME)
+  if (!base) {
+    throw new Error(Errors.InvalidName)
   }
 
-  const baseFilename = lastSegment.replace(/(\.vue|\.module)?(\.\w+)$/, '')
-
-  const pathHash = getHash(parts.join("/"));
+  const baseFilename = base.replace(BASE_FILENAME_STRIP_REGEX, '')
+  const pathHash = getHash(dir)
   const classname = `${baseFilename}${separator.beforeClassName}${name}`
-  const hash = `${separator.beforeHash}${getHash(`${pathHash}-${classname}`)}`
+  const hash = `${separator.beforeHash}${getHash(`${pathHash}${Hash.InputSeparator}${classname}`)}`
   const lineInfo =
     lineNumber !== undefined ? `${separator.beforeLineNumber}${lineNumber}` : ''
 
