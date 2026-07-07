@@ -1,5 +1,5 @@
-import { describe, it, expect } from 'vitest'
-import { defaultOptions } from '../src/constants.js'
+import { describe, expect, it } from 'vitest'
+import { defaultOptions, Errors } from '../src/constants.js'
 import { sanitizeModuleClassname } from '../src/utils.js'
 
 describe('sanitizeModuleClassname', () => {
@@ -36,13 +36,13 @@ describe('sanitizeModuleClassname', () => {
       sanitizeModuleClassname('test', undefined, {
         ...defaultOptions.separator,
       })
-    }).toThrow('The filename must be string and cannot be undefined.')
+    }).toThrow(Errors.InvalidType)
   })
 
   it('should throw error for invalid file path', () => {
     expect(() => {
       sanitizeModuleClassname('test', '/', { ...defaultOptions.separator })
-    }).toThrow('Filename must include a valid file name.')
+    }).toThrow(Errors.InvalidName)
   })
 
   it('should generate same hash for same input', () => {
@@ -73,7 +73,7 @@ describe('sanitizeModuleClassname', () => {
     expect(result1).not.toBe(result2)
   })
 
-  it('should handle Windows absolute paths from Vite', () => {
+  it('should handle Windows absolute paths with forward slashes from Vite', () => {
     const result = sanitizeModuleClassname(
       'Root',
       'C:/Users/dev/project/src/components/EventCard.module.sass',
@@ -81,6 +81,58 @@ describe('sanitizeModuleClassname', () => {
     )
     expect(result).toMatch(/^EventCard__Root_[a-z0-9]+$/)
     expect(result).not.toContain('C:')
+    expect(result).not.toContain('/')
+  })
+
+  it('should handle Windows absolute paths with backslashes', () => {
+    const result = sanitizeModuleClassname(
+      'Root',
+      'C:\\Users\\dev\\project\\src\\components\\EventCard.module.sass',
+      { ...defaultOptions.separator },
+    )
+    expect(result).toMatch(/^EventCard__Root_[a-z0-9]+$/)
+    expect(result).not.toContain('C:')
+    expect(result).not.toContain('/')
+    expect(result).not.toContain('\\')
+  })
+
+  it('should produce the same class name regardless of Windows path separator style', () => {
+    const separator = { ...defaultOptions.separator }
+    const forwardSlashes =
+      'C:/Users/dev/project/src/components/EventCard.module.sass'
+    const backslashes =
+      'C:\\Users\\dev\\project\\src\\components\\EventCard.module.sass'
+    const mixedSeparators =
+      'C:\\Users\\dev/project\\src\\components\\EventCard.module.sass'
+
+    const forwardResult = sanitizeModuleClassname(
+      'Root',
+      forwardSlashes,
+      separator,
+    )
+    const backslashResult = sanitizeModuleClassname(
+      'Root',
+      backslashes,
+      separator,
+    )
+    const mixedResult = sanitizeModuleClassname(
+      'Root',
+      mixedSeparators,
+      separator,
+    )
+
+    expect(backslashResult).toBe(forwardResult)
+    expect(mixedResult).toBe(forwardResult)
+  })
+
+  it('should handle UNC paths', () => {
+    const result = sanitizeModuleClassname(
+      'Root',
+      '\\\\server\\share\\project\\EventCard.module.sass',
+      { ...defaultOptions.separator },
+    )
+    expect(result).toMatch(/^EventCard__Root_[a-z0-9]+$/)
+    expect(result).not.toContain('\\')
     expect(result).not.toContain('/')
   })
 })
