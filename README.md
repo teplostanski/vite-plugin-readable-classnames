@@ -221,10 +221,5 @@ Thanks again for your support, it is much appreciated! 🙏
 <a href="https://github.com/teplostanski/vite-plugin-readable-classnames/blob/main/LICENSE">MIT</a> License © 2024-present <a href="https://github.com/teplostanski">Igor Teplostanski</a>
 
 <br>
-<br>
 
-<div>
-  <a href="https://donate.teplostanski.me" target="_blank">
-    <img src="https://src.teplostanski.me/fund-this-package.svg" alt="Fund This Package ❤">
-  </a>
-</div>
+[![Donate](https://img.shields.io/static/v1?label=donate&message=teplostanski.me&color=4F46E5)](https://donate.teplostanski.me)
