@@ -22,7 +22,7 @@
 [![Open on npmx.dev](https://npmx.dev/api/registry/badge/vulnerabilities/vite-plugin-readable-classnames?labelColor=1f2033)](https://npmx.dev/package/vite-plugin-readable-classnames)
 [![Open on npmx.dev](https://npmx.dev/api/registry/badge/deprecated/vite-plugin-readable-classnames?labelColor=1f2033)](https://npmx.dev/package/vite-plugin-readable-classnames)
 [![Open on npmx.dev](https://npmx.dev/api/registry/badge/updated/vite-plugin-readable-classnames?labelColor=1f2033)](https://npmx.dev/package/vite-plugin-readable-classnames)
-![Github Tests Status](https://img.shields.io/github/actions/workflow/status/teplostanski/vite-plugin-readable-classnames/test.yml?label=tests&labelColor=1f2033&color=22c55e&style=flat)
+![Github Tests Status](https://img.shields.io/github/actions/workflow/status/teplostanski/vite-plugin-readable-classnames/codecov.yml?label=tests&labelColor=1f2033&color=22c55e&style=flat)
 ![Github Tests Status](https://img.shields.io/codecov/c/gh/teplostanski/vite-plugin-readable-classnames?label=coverage&labelColor=1f2033&color=22c55e&style=flat)
 
   <samp>English • <a href="https://vite-plugin-readable-classnames.js.org/ru">Russian</a></samp>
