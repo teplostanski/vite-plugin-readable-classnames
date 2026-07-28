@@ -23,7 +23,7 @@
 [![Open on npmx.dev](https://npmx.dev/api/registry/badge/deprecated/vite-plugin-readable-classnames?labelColor=1f2033)](https://npmx.dev/package/vite-plugin-readable-classnames)
 [![Open on npmx.dev](https://npmx.dev/api/registry/badge/updated/vite-plugin-readable-classnames?labelColor=1f2033)](https://npmx.dev/package/vite-plugin-readable-classnames)
 ![Github Tests Status](https://img.shields.io/github/actions/workflow/status/teplostanski/vite-plugin-readable-classnames/codecov.yml?label=tests&labelColor=1f2033&color=22c55e&style=flat)
-![Github Tests Status](https://img.shields.io/codecov/c/gh/teplostanski/vite-plugin-readable-classnames?label=coverage&labelColor=1f2033&color=22c55e&style=flat)
+![Coverage](https://img.shields.io/codecov/c/gh/teplostanski/vite-plugin-readable-classnames?label=coverage&labelColor=1f2033&color=22c55e&style=flat)
 
   <samp>English • <a href="https://vite-plugin-readable-classnames.js.org/ru">Russian</a></samp>
 
@@ -222,4 +222,4 @@ Thanks again for your support, it is much appreciated! 🙏
 
 <br>
 
-[![Donate](https://img.shields.io/static/v1?label=donate&message=teplostanski.me&color=4F46E5)](https://thanks.teplostanski.me)
+[![Thanks](https://img.shields.io/static/v1?label=thanks&message=teplostanski.me&color=4F46E5)](https://thanks.teplostanski.me)
