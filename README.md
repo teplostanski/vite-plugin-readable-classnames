@@ -10,8 +10,6 @@
       <span> · </span>
       <a href="https://github.com/teplostanski/vite-plugin-readable-classnames">github</a>
       <span> · </span>
-      <a href="https://codeberg.org/teplostanski/vite-plugin-readable-classnames/src/branch/main/README.md">codeberg</a>
-      <span> · </span>
       <a href="https://thanks.teplostanski.me">fund this package</a>
     </samp>
   </p>
@@ -23,9 +21,7 @@
 [![Open on npmx.dev](https://npmx.dev/api/registry/badge/deprecated/vite-plugin-readable-classnames?labelColor=1f2033)](https://npmx.dev/package/vite-plugin-readable-classnames)
 [![Open on npmx.dev](https://npmx.dev/api/registry/badge/updated/vite-plugin-readable-classnames?labelColor=1f2033)](https://npmx.dev/package/vite-plugin-readable-classnames)
 ![Github Tests Status](https://img.shields.io/github/actions/workflow/status/teplostanski/vite-plugin-readable-classnames/codecov.yml?label=tests&labelColor=1f2033&color=22c55e&style=flat)
-![Coverage](https://img.shields.io/codecov/c/gh/teplostanski/vite-plugin-readable-classnames?label=coverage&labelColor=1f2033&color=22c55e&style=flat)
-
-  <samp>English • <a href="https://vite-plugin-readable-classnames.js.org/ru">Russian</a></samp>
+![Coverage](https://img.shields.io/codecov/c/gh/teplostanski/vite-plugin-readable-classnames?label=coverage&labelColor=1f2033&color=22c55e&style=flat)hr
 
   <p>Make your scoped CSS module class names clear and readable — this plugin automatically adds the module filename and other useful info to class names for easier development.</p>
 
