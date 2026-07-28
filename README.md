@@ -21,13 +21,9 @@
 [![Open on npmx.dev](https://npmx.dev/api/registry/badge/deprecated/vite-plugin-readable-classnames?labelColor=1f2033)](https://npmx.dev/package/vite-plugin-readable-classnames)
 [![Open on npmx.dev](https://npmx.dev/api/registry/badge/updated/vite-plugin-readable-classnames?labelColor=1f2033)](https://npmx.dev/package/vite-plugin-readable-classnames)
 ![Github Tests Status](https://img.shields.io/github/actions/workflow/status/teplostanski/vite-plugin-readable-classnames/codecov.yml?label=tests&labelColor=1f2033&color=22c55e&style=flat)
-![Coverage](https://img.shields.io/codecov/c/gh/teplostanski/vite-plugin-readable-classnames?label=coverage&labelColor=1f2033&color=22c55e&style=flat)hr
+![Coverage](https://img.shields.io/codecov/c/gh/teplostanski/vite-plugin-readable-classnames?label=coverage&labelColor=1f2033&color=22c55e&style=flat)
 
   <p>Make your scoped CSS module class names clear and readable — this plugin automatically adds the module filename and other useful info to class names for easier development.</p>
-
-  <p>Included in the <a href='https://registry.vite.dev/plugins?q=vite-plugin-readable-classnames'>Vite Plugin Registry
-  <br>
-  <img src='https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg' alt='Awesome'></a></p>
 </div>
 
 - [Installation](#installation)
