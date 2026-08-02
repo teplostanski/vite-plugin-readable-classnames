@@ -74,10 +74,6 @@ export default defineConfig({
         link: 'https://github.com/teplostanski/vite-plugin-readable-classnames',
       },
       {
-        icon: 'codeberg',
-        link: 'https://codeberg.org/teplostanski/vite-plugin-readable-classnames',
-      },
-      {
         icon: 'npm',
         link: 'https://www.npmjs.com/package/vite-plugin-readable-classnames',
       },
