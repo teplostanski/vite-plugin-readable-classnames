@@ -23,7 +23,7 @@
 ![Github Tests Status](https://img.shields.io/github/actions/workflow/status/teplostanski/vite-plugin-readable-classnames/codecov.yml?label=tests&labelColor=1f2033&color=22c55e&style=flat)
 ![Coverage](https://img.shields.io/codecov/c/gh/teplostanski/vite-plugin-readable-classnames?label=coverage&labelColor=1f2033&color=22c55e&style=flat)
 
-  <p>Make your scoped CSS module class names clear and readable — this plugin automatically adds the module filename and other useful info to class names for easier development.</p>
+  <p>Make your scoped CSS module class names clear and readable. This plugin automatically adds the module filename and other useful info to class names for easier development.</p>
 </div>
 
 - [Installation](#installation)
@@ -61,7 +61,7 @@ bun add -d vite-plugin-readable-classnames
 
 - Framework-agnostic:
 
-    ![VanillaJS](https://img.shields.io/badge/Vanilla_JS_%2F_TS-%231f2033.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![React/Preact](https://img.shields.io/badge/react_%2F_preact-%231f2033.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Vue](https://img.shields.io/badge/vue-%231f2033.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D) ![Next](https://img.shields.io/badge/Next-%231f2033.svg?style=for-the-badge&logo=nextdotjs&logoColor=%23FFFFFF) ![Nuxt](https://img.shields.io/badge/Nuxt-%231f2033.svg?style=for-the-badge&logo=nuxt&logoColor=%2300DC82) ![Astro](https://img.shields.io/badge/Astro-%231f2033.svg?style=for-the-badge&logo=astro&logoColor=%23BC52EE)
+    ![VanillaJS](https://img.shields.io/badge/Vanilla_JS_%2F_TS-%231f2033.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![React/Preact](https://img.shields.io/badge/react_%2F_preact-%231f2033.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Vue](https://img.shields.io/badge/vue-%231f2033.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D) ![ViNext](https://img.shields.io/badge/ViNext-%231f2033.svg?style=for-the-badge&logo=cloudflare&logoColor=%23F38020) ![Nuxt](https://img.shields.io/badge/Nuxt-%231f2033.svg?style=for-the-badge&logo=nuxt&logoColor=%2300DC82) ![Astro](https://img.shields.io/badge/Astro-%231f2033.svg?style=for-the-badge&logo=astro&logoColor=%23BC52EE)
 - Universal:
   - Compatible with both `CommonJS` and `ES Modules`
   - Support `Vite 2.x`
