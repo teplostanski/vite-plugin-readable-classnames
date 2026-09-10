@@ -1,7 +1,7 @@
 {
   "name": "vite-plugin-readable-classnames",
-  "version": "1.5.11",
-  "description": "Make your scoped CSS module class names clear and readable — this plugin automatically adds the module filename and other useful info to class names for easier development.",
+  "version": "1.5.12",
+  "description": "Make your scoped CSS module class names clear and readable. This plugin automatically adds the module filename and other useful info to class names for easier development.",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
@@ -57,7 +57,7 @@
     "README.md",
     "LICENSE"
   ],
-  "packageManager": "pnpm@11.17.0",
+  "packageManager": "pnpm@11.26.0",
   "scripts": {
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
@@ -65,18 +65,6 @@
     "dev": "tsdown --watch",
     "format": "prettier src/**/*.{js,ts,md} --write --no-error-on-unmatched-pattern",
     "prepublishOnly": "pnpm run build",
-    "release": "standard-version",
-    "release:major": "standard-version --release-as major",
-    "release:minor": "standard-version --release-as minor",
-    "release:patch": "standard-version --release-as patch",
-    "prerelease:alpha": "standard-version --prerelease alpha",
-    "prerelease:beta": "standard-version --prerelease beta",
-    "prerelease:major:alpha": "standard-version --release-as major --prerelease alpha",
-    "prerelease:major:beta": "standard-version --release-as major --prerelease beta",
-    "prerelease:minor:alpha": "standard-version --release-as minor --prerelease alpha",
-    "prerelease:minor:beta": "standard-version --release-as minor --prerelease beta",
-    "prerelease:patch:alpha": "standard-version --release-as patch --prerelease alpha",
-    "prerelease:patch:beta": "standard-version --release-as patch --prerelease beta",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
@@ -84,20 +72,19 @@
     "update-deps": "pnpm dlx taze -w && pnpm install && pnpm audit --fix"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.4",
-    "@types/node": "^25.9.4",
-    "@vitest/coverage-v8": "^4.1.10",
+    "@eslint/js": "^9.39.5",
+    "@types/node": "^25.9.6",
+    "@vitest/coverage-v8": "^4.1.11",
     "eslint": "^9.39.4",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.6",
     "husky": "^9.1.7",
-    "prettier": "^3.9.4",
-    "standard-version": "^4.2.0",
+    "prettier": "^3.9.6",
     "tsdown": "^0.21.10",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.62.1",
-    "vite": "^8.1.3",
-    "vitest": "^4.1.10"
+    "typescript-eslint": "^8.70.0",
+    "vite": "^8.2.2",
+    "vitest": "^4.1.11"
   },
   "peerDependencies": {
     "vite": "^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0"
