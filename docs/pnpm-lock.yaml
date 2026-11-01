@@ -12,8 +12,8 @@ importers:
         specifier: ^2.0.0-alpha.20
         version: 2.0.0-alpha.20(postcss@8.5.28)
       vitepress-plugin-group-icons:
-        specifier: ^1.7.6
-        version: 1.7.6(vite@8.2.2)
+        specifier: ^1.8.1
+        version: 1.8.1(vite@8.2.2)
       vitepress-plugin-llms:
         specifier: ^1.13.5
         version: 1.13.5
@@ -891,8 +891,8 @@ packages:
       yaml:
         optional: true
 
-  vitepress-plugin-group-icons@1.7.6:
-    resolution: {integrity: sha512-fXSpQAYHpFpEsZLKWQAwbRx/+0uRSHmY58YNAQcz0AVirGsM6w22jtSmQhOGLEj8ZKyeRtTJrpx6otUI6wvoaQ==}
+  vitepress-plugin-group-icons@1.8.1:
+    resolution: {integrity: sha512-9TY8xunZDX+a+k4GZu+2rJftBsZXCEMsFXLj3p2JTM/NCTRGvIemx+iBhvauyCbOFcIEYTsRVswWF1TeMS89Ew==}
     peerDependencies:
       vite: '>=3'
     peerDependenciesMeta:
@@ -1839,7 +1839,7 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
 
-  vitepress-plugin-group-icons@1.7.6(vite@8.2.2):
+  vitepress-plugin-group-icons@1.8.1(vite@8.2.2):
     dependencies:
       '@iconify-json/logos': 1.2.14
       '@iconify-json/vscode-icons': 1.2.77
