@@ -10,7 +10,7 @@
     "update-deps": "pnpm dlx taze -w && pnpm install && pnpm audit --fix"
   },
   "devDependencies": {
-    "vitepress": "^2.0.0-alpha.20",
+    "vitepress": "^2.0.0-alpha.21",
     "vitepress-plugin-group-icons": "^1.7.6",
     "vitepress-plugin-llms": "^1.13.5"
   }
