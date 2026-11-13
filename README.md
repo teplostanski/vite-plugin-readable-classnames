@@ -215,3 +215,4 @@ Thanks again for your support, it is much appreciated! 🙏
 <br>
 
 [![Thanks](https://img.shields.io/static/v1?label=thanks&message=teplostanski.me&color=4F46E5)](https://thanks.teplostanski.me)
+[![Vite Plugin Readable Classnames on StartupScores](https://startupscores.com/badge/vite-plugin-readable-classnames.svg?style=shield&v=combo&theme=dark)](https://startupscores.com/open-source/vite-plugin-readable-classnames)
